@@ -1,0 +1,24 @@
+<!-- 각 브라우저별로 input요소의 type속성 file 라벨 값을 확인해보세요 -->
+<!DOCTYPE html>
+<html>
+<head>
+<title> 시간 입력 예제 </title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h4>시간 입력 예제</h4>
+	<form method="get" action="result.html">
+			<table width="700">
+			<tr>
+				<td width="50" >&nbsp;&nbsp; time (시간)</td>
+				<td width="50">datetime (지역시간)</td>
+			</tr>
+			<tr>
+				<td>&nbsp;&nbsp;<input type="time" name="time" value="18:00"> </td>
+				<td><input type="datetime-local" name="datetime-local" value="2023-06-23 18:00"> </td>
+			</tr>
+			</table>
+		<input type="submit" value= "전송">		
+	</form>
+</body>
+</html>

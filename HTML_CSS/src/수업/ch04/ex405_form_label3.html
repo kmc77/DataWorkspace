@@ -1,0 +1,35 @@
+<!-- 각 브라우저별로 input요소의 type속성 file 라벨 값을 확인해보세요 -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>텍스트 라벨 예제2</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<h3>오늘의 점심 메뉴는?</h3>
+	<p>
+	</p>			
+	<form method="get" action="result.html">
+			성별: &nbsp;
+		<label>짜장면	
+		<input type="radio" name="gender" id="male" value="male" checked>
+		<img src="image/j.png" width="100" alt="j.png">
+		</label>
+		
+		<label>짬뽕
+		<input type="radio" name="gender" id="female" value="female">
+		<img src="image/jj.png" width="100" alt="jj.png">
+		</label>
+		
+		<label>탕수육
+		<input type="radio" name="gender" id="female" value="female">
+		<img src="image/t.png" width="100" alt="t.png">
+		</label>
+		
+		<br>
+		<hr>
+		<input type="submit" value="전송">
+		<input type="reset" value="취소">		
+	 </form>
+</body>
+</html>

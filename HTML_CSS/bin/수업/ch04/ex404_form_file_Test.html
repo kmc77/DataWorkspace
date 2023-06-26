@@ -1,0 +1,49 @@
+<!-- 각 브라우저별로 input요소의 type속성 file 라벨 값을 확인해보세요 -->
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>파일 입력 예제</title>
+</head>
+<body>
+
+<h3>다양한 입력 폼</h3>
+	<fieldset>
+	<legend>회원 가입 폼</legend>
+	<form action="result.html">
+				성명:&nbsp;
+		<!-- name : 요소의 이름, value : 초기 텍스트 -->
+		<input type="text" value="" name="id"><br>
+		성별: <input type="radio" name="gender" value="male">남성
+			<input type="radio" name="gender" value="female">여성<br>
+		과목:
+		<select name="job" size="1"> <!-- size 속성에서 1은 한개의 목록만 보임을 의미 -->
+			<option value="java" >자바</option>
+			<option value="oracle" selected>오라클</option>
+			<option value="html" >HTML</option>
+			<option value="css" >CSS</option>
+			<option value="javaScript" >javaScript</option>
+			
+			</select>	 
+		
+		<p>구입희망분야(복수선택 가능) <br> - 분야:
+			<input type="checkbox" name="hobby" value="computer">컴퓨터
+			<input type="checkbox" name="hobby" value="economy" checked>경제
+			<input type="checkbox" name="hobby" value="common">상식<br><br>
+		
+		비고: <br>
+		<textarea name="comments" rows="4" cols="40">나는 &lt;textarea&gt; 입니다. 속성은 rows="4" cols="40"</textarea>>
+			</p>
+				파일 업로드하기
+			<br>	
+			
+			<!-- accept=".png" : 확장자 "png"인 파일만 보입니다. -->
+	<p><input type="file" name="myfile" accept=".png"> </p>
+	<hr>
+	<input type="submit" value="전송">
+	<input type="reset" value="취소">		
+	</form>
+	</fieldset>
+</body>
+</html>
