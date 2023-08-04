@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/kmc77/2023_05_03.git"/>
 		<item value="https://github.com/kmc77/HTML_CSS.git"/>
 	</list>
 	<list key="EGit.KnownHosts">
+		<item value="bitbucket.org"/>
 		<item value="git.eclipse.org"/>
 		<item value="github.com"/>
-		<item value="bitbucket.org"/>
 	</list>
 	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
 		<item key="MAIN_SASH_FORM_ORIENTATION_VERTICAL" value="false"/>

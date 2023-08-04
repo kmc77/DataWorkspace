@@ -1,0 +1,33 @@
+<!--  아래의 조건에 맞는 css를 작성해 보세요
+	div 요소에 box-sizing 속성의 값을 content-box로 설정합니다.
+	id=first인 요소에 빨간색 배경을 설정합니다.
+	id=second 인 요소에 가로 100px, 세로 100px 크기의 orange 색의 박스 -->
+
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <meta charset="UTF-8">
+    <title>박스 모델(Box Model) : box-sizing:content-box</title>
+    	<!-- box-sizing:border-box;
+    		 width 와 height 속성이 padding
+    		 margin을 포함하지 않습니다.
+    		  -->
+   			   	
+   		<style>
+   			div{box-sizing:content-box;}
+   			
+   			#first {background: red;}
+   			
+   		
+   	
+   		</style>	   	
+  </head>
+  <body>
+    <div id="first">first</div>
+  	<div id="second">second</div>
+  	<div id="third">third</div>
+  	<div id="third_clip">third_clip</div>
+  	<div id="fourth">fourth</div>
+  	<div id="fifth">fifth</div>
+  </body>
+</html>

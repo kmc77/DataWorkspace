@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <meta charset="utf-8">
+    <title>transform(응용)</title>
+    <!-- 텍스트나 이미지를 회전이나 확대 등 다양한 기하학적인 모양으로 출력할 수 있다.
+    	 변환에서 사용되는 회전 각도의 단위는 deg(각도-degree)이며 시계방향으로 회전한다. -->
+    <style>
+    
+    .bar1, .bar2, .bar3 {
+ 	width: 35px;
+ 	height: 5px;
+ 	background-color: #333;
+ 	margin: 6px 0;
+ 	position: relative;
+ 	left:100px;
+ 	top:100px;
+ }
+    
+    .container:hover .bar1 {
+  		transform: rotate(-45deg);
+  		transition-duration: 0.5s;
+  }
+    
+   .container:hover .bar2  {
+    	 opacity: 0;
+    }
+    
+    .container:hover .bar3 {
+    	transform: rotate(45deg);
+  		transition-duration: 0.5s;
+  }
+    
+  /*마우스 올릴 때 추가 변환*/
+  .container { 
+  	/*cusor: 마우스 커서 모양을 바꾸는 속성
+  	  pointer - 손가락 모양
+  	  wait    - 로딩
+  	  */
+   	cursor: pointer;
+   }
+   
+
+   		</style>	   	
+  </head>
+  <body>
+	<div class="container">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>
+  </body>
+</html>

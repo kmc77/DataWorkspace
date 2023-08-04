@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <meta charset="UTF-8">
+    <title>배경관련 속성 - 단축속성을 이용한 예제</title>
+    <style>
+    /* background-color : 배경색 속성 */
+     h3 { color: red; background-color: #90ff90 }  
+     h3::after { content: " (ⓒsblim)"; font-size: 10pt; }
+                   
+    
+    #first { background: url(image/flower.jpg) repeat-x; }
+    		 
+    #second { background: url(image/flower.jpg); }
+    
+    #third { background: url(image/flower.jpg) no-repeat center bottom }
+    </style>
+  </head>
+  <body>
+    <h3>background 단축속성을 이용해서 배경 이미지, 반복, 위치 등을 한 줄의 속성으로 설정합니다. </h3>
+    
+  	<table border=1 width=500px height=50px align=center>
+		<tr align=center>
+		
+  		<td id="first"> 배경 이미지<br> &bull; url(파일경로)
+  						<br><br>&bull; background-repeat :
+  						<br> &nbsp;  repeat-x </td>
+  		<td id="second"> 배경 이미지<br> &bull; url(파일경로)		
+  						<br><br>&bull; background-repeat :
+  						<br> &nbsp;  repeat </td>
+  		<td id="third"> 배경 이미지 <br><br>&bull;background-repeat :		
+  						<br><br>&bull; no-repeat,
+  						<br><br>&bull; background-repeat :
+  						<br> &nbsp; center bottom </td>	
+  	</tr>
+  	</title>
+  </body>
+</html>

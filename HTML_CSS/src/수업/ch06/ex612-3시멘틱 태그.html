@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <title>리스트로 메뉴 만들기</title>
+    <meta charset="utf-8">
+    <style> 
+    body {
+    		margin: 0;
+    	}
+    	
+    header {
+    		background: #808000a8;
+    		height: 3rem;
+    		line-height:50px;
+    		line-height: 3rem;
+    		text-align: center;
+   			}
+   	nav {
+   		background: olive;
+   		height: 50px;
+   	}		
+   			
+   	nav > ul {  /*ul 이 갖고 있는 기본 여백을 없어요 */
+   			margin: 0;
+   	}
+   	
+   	nav > ul > li {		
+   			display : inline;
+   			list-style-type: none; /*마커 삭세 */
+   			padding: 0px 15px;
+ 	}	
+   
+	nav > ul > li > a {		
+   			color: white;
+   			font-size: 20px;
+   			line-height: 50px;
+   			text-decoration: none;  /* 밑줄 없애요 */
+ 	}	
+ 	
+ 	nav > ul > li > a:hover {		
+    		color: #ffc107; /* 마우스 올릴 때 색상 */
+    }
+    
+    article p::before {
+    		content: '▶'
+    }
+    
+    aside {
+    	float:right; 
+    	width:40%;
+    	background: lime;
+    	height:500px;	
+    	font-size: 2rem;
+    }
+    
+    article {
+    	float:right; 
+    	width:60%;
+    	background: orange;
+    	padding: 0px 5%;
+    	height:500px;	
+    	box-sizing: border-box
+    }
+   				 
+ 	 footer {
+  		clear:both; 
+  		text-align: center;
+    	background: green;
+    	height:50px;	
+    	line-height: 50px;
+ 	}
+  			
+   		</style>	   	
+  </head>
+  <body>
+  	<header>웹</header>
+  	<nav>
+  	 <ul>
+  	 	<li><a href="">Home</a></li>
+  	 	<li><a href="#">HTML</a></li>
+  	 	<li><a href="#">CSS</a></li>
+  	 	<li><a href="#">JAVA SCRIPT</a></li>
+  	 	<li><a href="#">F.A.Q</a></li>
+  	 </ul>
+  	</nav> 
+  	<aside>
+  		<ul>
+  			<li>W3C</li>
+  			<li>ECMA</li>
+  			<li>IETF</li>
+  	 	</ul>
+  	 </aside>
+  	 <article>
+  	 		<h1>html5 문서 기본</h1>
+  	 		<p>기본 문서 만들기</p>
+  	 		<p>문서 꾸미기</p>
+  	 		<p>목록 나열하기</p>
+  	 		<p>표 그리기</p>
+  	 		<p>문서 특정부분 구분하기</p>
+  	 		<p>문서 구조화하기</p>
+  	 </article>
+  	 <footer>작성자: 히든 싱어 팀</footer>
+  </body>
+</html>

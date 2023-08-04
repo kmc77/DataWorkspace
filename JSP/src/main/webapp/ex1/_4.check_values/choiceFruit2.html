@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<style>
+  body {
+    margin: 30px 30px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+  }
+
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .fruit-image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  input[type="submit"] {
+    width: 10em;
+    background-color: #46ac46;
+    height: 3em;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+  }
+
+  input[type="submit"]:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    font-weight: bold;
+  }
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+  $(function(){
+	  $("form").submit(function(){
+		 const seleted=$("input:checkbox:checked").length;
+		 if(seleted<1){
+			 alert("한 개 이상 선택해 주세요");
+			 return false;
+		 }
+	  });
+  })
+</script>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>apple.png</th>
+      <th>grape.png</th>
+      <th>strawberry.png</th>
+      <th>water-melon.png</th>
+    </tr>
+  </table>
+  <img src="../../image/apple.png" alt="apple.png" class="fruit-image">
+  <img src="../../image/grape.png" alt="grape.png" class="fruit-image">
+  <img src="../../image/strawberry.png" alt="strawberry.png" class="fruit-image">
+  <img src="../../image/water-melon.png" alt="water-melon.png" class="fruit-image">
+  <form action="choiceFruit" method="get">
+  </form>
+</body>
+</html>
