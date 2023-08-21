@@ -32,8 +32,20 @@ public class MemberDao {
 			//조회결과가 없는 경우 dbmember는 null 입니다.
 			Member dbmember = (Member) session.selectOne("org.hta.mybatis.member.select",
 														  member.getId());
+			if (dbmember != null) {
+				if (dbmember.getId().equals(member.getId())) {
+					result = -1; //아이디는 같고 비번이 다른경우
+					if (dbmember.getPassword().equals(member.getPassword())) {
+						result = 1; //아이디와 비번이 같은 경우
+					}
+				}
+			} else {
+				System.out.println("chk() 결과 = null");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		return 0;
+		return result;
 	}
 
 	public int insert(Member mem) {

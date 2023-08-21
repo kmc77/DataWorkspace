@@ -49,9 +49,40 @@ public class MemberDao_설명 {
 		return session;
 	}
 
-	public int chk(Member mem) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int chk(Member member) {
+		int result = 0; //아이디가 없는 경우
+		
+		try(SqlSession session = getSession()) {
+			//조회결과가 없는 경우 dbmember는 null 입니다.
+			
+			/*
+			 첫번째 매개변수 "org.hta.mybatis.member.select"는 
+			 SQL 맵퍼 파일에서 namespace가 "org.hta.mybatis.member"이고
+			 아이디가 "select"로 정의된 태그를 의미합니다.
+			 
+			 두번째 매개변수 : SQL문을 실행할 때 입력 매개 변수에 값을 공급할 객체입니다.
+			 member.getId()의 자료형은 parameterType과 일치해야 합니다.
+			 <select id="select" parameterType="String" resultType="Member">
+			 		select * from member22 where id = #{inputid}
+			 </select>		
+			 */
+			//조회결과가 없는 경우 dbmember는 null 입니다.
+			Member dbmember = (Member) session.selectOne("org.hta.mybatis.member.select",
+														  member.getId());
+			if (dbmember != null) {
+				if (dbmember.getId().equals(member.getId())) {
+					result = -1; //아이디는 같고 비번이 다른경우
+					if (dbmember.getPassword().equals(member.getPassword())) {
+						result = 1; //아이디와 비번이 같은 경우
+					}
+				}
+			} else {
+				System.out.println("chk() 결과 = null");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	public int insert(Member mem) {
