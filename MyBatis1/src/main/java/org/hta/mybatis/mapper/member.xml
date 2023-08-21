@@ -5,10 +5,17 @@
   <mapper namespace ="org.hta.mybatis.member">
   
   	<select id="select" parameterType="String" resultType="Member">
-  		selset *
+  		select *
   		from member22
   		where id = #{inputid}
   	</select>
+  	
+  	<insert id ="insert" parameterType="org.hta.member.domain.Member">
+  		insert into member22
+  		values
+  		(#{id}, #{password})
+  	
+  	</insert>
   
   </mapper>
   

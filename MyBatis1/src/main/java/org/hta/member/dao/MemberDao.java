@@ -48,9 +48,15 @@ public class MemberDao {
 		return result;
 	}
 
-	public int insert(Member mem) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insert(Member member) {
+	    int result = 0;
+	    try (SqlSession session = getSession()) {
+	        result = session.insert("org.hta.mybatis.member.insert", member);
+	        //result = session.insert("insert", member);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return result;
 	}
 
 }
