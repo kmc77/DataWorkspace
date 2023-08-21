@@ -59,7 +59,7 @@ import javax.servlet.http.HttpServletResponse;
 				break;
 				
 			case "/joinPro.net":
-				action = new JoinAcion();
+				action = new JoinAction();
 				break;
 				
 			case "/logout.net":

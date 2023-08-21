@@ -13,7 +13,7 @@ public class JoinForm implements Action {
             throws ServletException, IOException {
         ActionForward forward = new ActionForward();
         forward.setRedirect(false);
-        forward.setPath("jsp/main.jsp");
+        forward.setPath("jsp/joinForm.jsp");
         return forward;
         
     }

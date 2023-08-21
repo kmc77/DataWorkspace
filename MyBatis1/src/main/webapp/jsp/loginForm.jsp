@@ -10,31 +10,22 @@
 <script>
 	$(function() {
 		$(".join").click(function(){
-			location.href = "join.net";
+			location.href = "joinForm.net";
 		});
-		
-		const id = '${id}';
-		if (id) {
-			$("#id").val(id);
-			$("#remember").prop('checked', true);
-		}
 	})
 </script>
 </head>
 <body>
 
-<form name="loginform" action="loginProcess.net" method="post">
+<form action="loginPro.net" method="post">
 
  <h1>로그인 </h1>
  	 <hr>
  	 <b>아이디</b>
-		<input type="text" name="id" placeholder="Enter id" id="id" required>
+		<input type="text" name="id" placeholder="Enter id" id="id" maxLength="10" required>
 		
 		<b>Password</b>
-		<input type="password" name="pass" placeholder="Enter password" required>
-		<input type="checkbox" id="remember" name="remember" value="store">
-		<span>remember</span>
-		
+		<input type="password" name="password" placeholder="Enter password" maxLength="10" required>
 		<div class="clearfix">
 			<button type="submit" class="submitbtn">로그인</button>
 			<button type="button" class="join">회원가입</button>
