@@ -25,7 +25,7 @@
 		margin: 5px 0px;
 	}
 	.num0, .num1, .num2, .num3, .num4, .num5, 
-	.num6, .num7, .num8, .num9, .num10, .num11 {
+	.num6, .num7, .num8, .num9, .num10{
 		text-align: center;
 		margin: 15px;
 	}
