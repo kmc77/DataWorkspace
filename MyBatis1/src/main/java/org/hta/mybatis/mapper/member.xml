@@ -33,6 +33,10 @@
     delete from member22
     where id = #{id}
 	</delete>
+	
+	<select id="list2" resultType="map">
+		select * from member22
+	</select>
 
   
   </mapper>

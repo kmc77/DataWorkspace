@@ -67,7 +67,8 @@ import javax.servlet.http.HttpServletResponse;
 				break;
 				
 			case "/list.net":
-				action = new ListAction();
+				//action = new ListAction();
+				action = new ListAction_Map();
 				break;
 
 			case "/delete.net":
