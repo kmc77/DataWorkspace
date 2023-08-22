@@ -10,7 +10,7 @@
 	.container{width:500px; margin:0 auto}
 	legend{test-align:center; color:#17a2b8}
 </style>
-<script src="js/jquery-3.6.3.js"></script>
+<script src="js/jquery-3.7.0.js"></script>
 </head>
 <body>
 <div class="container">
@@ -38,6 +38,19 @@
 	<div><a href="main.net">메인으로</a></div>		
 	</fieldset>	
 	</div>
+	<script>
+		$(".btn-info").click(function(){
+			const id = $(this).attr("data-id");
+			location.href='updateForm.net?id='+id;
+		})
+		
+		$(".btn-danger").click(function(){
+			const id = $(this).attr("data-id");
+			if(confirm("정말 삭제 하시겠습니까?")){
+			location.href='delete.net?id='+id;
+			}
+		})
 	
+	</script>
 </body>
 </html>

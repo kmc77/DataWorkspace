@@ -60,6 +60,17 @@ public class MemberDao {
 	    return result;
 	}
 
+	public Member select(String id) {
+		Member dbmember = null;
+		try (SqlSession session = getSession()) {
+			dbmember = session.selectOne("select", id);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return dbmember;
+	}
+	
 	public List<Member> list() {
 	    List<Member> list = null; 
 	    try (SqlSession session = getSession()) {
@@ -69,5 +80,6 @@ public class MemberDao {
 	    }
 	    return list; 
 	}
+
 
 }
