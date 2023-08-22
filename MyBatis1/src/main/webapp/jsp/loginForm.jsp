@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>loginForm.html</title>
 <link href="css/login.css" type="text/css" rel ="stylesheet">
 <script src="js/jquery-3.7.0.js"></script>

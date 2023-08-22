@@ -26,7 +26,7 @@ public class Loginpro implements Action {
     	MemberDao md = new MemberDao();
     	int result = md.chk(mem);
     	
-    	response.setContentType("test/html;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
     	PrintWriter out = response.getWriter();
     	if(result == 1) { //아이디와 비번이 같은 경우
     		HttpSession session = request.getSession();

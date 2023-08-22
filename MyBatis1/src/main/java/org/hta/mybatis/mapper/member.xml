@@ -5,7 +5,7 @@
   <mapper namespace ="org.hta.mybatis.member">
   
   	<select id="select" parameterType="String" resultType="Member">
-  		select *
+  		select id, password
   		from member22
   		where id = #{inputid}
   	</select>
