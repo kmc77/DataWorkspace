@@ -7,7 +7,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.hta.emp.domain.Member;
+import org.hta.emp.domain.Emp;
 
 public class MemberDao_설명 {
 	
@@ -48,7 +48,7 @@ public class MemberDao_설명 {
 		return session;
 	}
 
-	public int chk(Member member) {
+	public int chk(Emp member) {
 		int result = 0; //아이디가 없는 경우
 		
 		try(SqlSession session = getSession()) {
@@ -66,7 +66,7 @@ public class MemberDao_설명 {
 			 </select>		
 			 */
 			//조회결과가 없는 경우 dbmember는 null 입니다.
-			Member dbmember = (Member) session.selectOne("org.hta.mybatis.member.select",
+			Emp dbmember = (Emp) session.selectOne("org.hta.mybatis.member.select",
 														  member.getId());
 			if (dbmember != null) {
 				if (dbmember.getId().equals(member.getId())) {
@@ -84,7 +84,7 @@ public class MemberDao_설명 {
 		return result;
 	}
 
-	public int insert(Member mem) {
+	public int insert(Emp mem) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

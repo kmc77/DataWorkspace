@@ -9,17 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.Action;
 
-import org.hta.emp.action.DeleteAction;
-import org.hta.emp.action.JoinAction;
-import org.hta.emp.action.JoinForm;
-import org.hta.emp.action.ListAction_Map;
-import org.hta.emp.action.LoginForm;
-import org.hta.emp.action.Loginpro;
-import org.hta.emp.action.Logout;
-import org.hta.emp.action.MainAction;
-import org.hta.emp.action.UpdateForm;
-import org.hta.emp.action.UpdatePro;
-
 
 
 	
@@ -34,7 +23,7 @@ import org.hta.emp.action.UpdatePro;
 		   String contextPath = request.getContextPath();
 		   String command = RequestURI.substring(contextPath.length());
 		   ActionForward forward = null;
-		   Action action = null;
+		   Term action = null;
 		   
 		   System.out.println("RequestURI=" + RequestURI);
 		   System.out.println("contextPath=" + contextPath);
@@ -42,49 +31,19 @@ import org.hta.emp.action.UpdatePro;
 		   
 
 			switch (command) {
-			case "/main.net":
-				action = new MainAction();
+			case "/term.net":
+				action = new Term();
 				break;
 				
-			case "/loginForm.net":
-				action = new LoginForm();
+			case "/Term2.net":
+				action = new Term2();
 				break;
 				
-			case "/loginPro.net":
-				action = new Loginpro();
+			case "/Term3.net":
+				action = new Term3();
 				break;
 				
-			case "/joinForm.net":
-				action = new JoinForm();
-				break;
-				
-			case "/joinPro.net":
-				action = new JoinAction();
-				break;
-				
-			case "/logout.net":
-				action = new Logout();
-				break;
-				
-			case "/list.net":
-				//action = new ListAction();
-				action = new ListAction_Map();
-				break;
-
-			case "/delete.net":
-				action = new DeleteAction();
-				break;
 			
-			case "/updateForm.net":
-				action = new UpdateForm();
-				break;
-				
-			case "/updatePro.net":
-				action = new UpdatePro();
-				break;	
-			
-				
-				
 
 			}// switch end
 
