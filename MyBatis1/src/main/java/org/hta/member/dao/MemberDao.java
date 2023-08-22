@@ -4,6 +4,7 @@ import org.hta.member.domain.Member;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -57,6 +58,16 @@ public class MemberDao {
 	        e.printStackTrace();
 	    }
 	    return result;
+	}
+
+	public List<Member> list() {
+	    List<Member> list = null; 
+	    try (SqlSession session = getSession()) {
+	        list = session.selectList("list");  
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return list; 
 	}
 
 }

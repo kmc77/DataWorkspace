@@ -16,6 +16,12 @@
   		(#{id}, #{password})
   	
   	</insert>
+  	
+  	<select id="list" resultType="Member">
+  		select *
+  		from member22
+  		order by id
+  	</select>
   
   </mapper>
   
