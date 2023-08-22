@@ -81,5 +81,15 @@ public class MemberDao {
 	    return list; 
 	}
 
+	public int update(Member mem) {
+	    int updated = 0;
+	    try (SqlSession session = getSession()) {
+	        updated = session.update("update", mem);
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage());
+	        e.printStackTrace();
+	    }
+	    return updated;
+	}
 
 }
