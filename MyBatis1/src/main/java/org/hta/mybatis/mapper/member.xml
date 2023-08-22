@@ -28,6 +28,12 @@
         set password = #{password}
         where id = #{id}
     </update>
+    
+    <delete id="delete" parameterType="String">
+    delete from member22
+    where id = #{id}
+	</delete>
+
   
   </mapper>
   

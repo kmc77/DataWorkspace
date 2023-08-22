@@ -81,6 +81,17 @@ public class MemberDao {
 	    return list; 
 	}
 
+	public int delete(String id) {
+		int result = 0; 
+		try (SqlSession session = getSession()) {
+			result = session.delete("delete", id);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
 	public int update(Member mem) {
 	    int updated = 0;
 	    try (SqlSession session = getSession()) {
@@ -91,5 +102,6 @@ public class MemberDao {
 	    }
 	    return updated;
 	}
+
 
 }
