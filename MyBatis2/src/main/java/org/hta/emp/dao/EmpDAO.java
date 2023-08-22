@@ -38,5 +38,27 @@ public class EmpDAO {
 		}
 		return list;
 	}
+	
+	public List<Emp> getTermList2(Map<String, String> m) {
+		List<Emp> list = null;
+		try (SqlSession session = getSession()) {
+			list = session.selectList("termlist2", m);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public List<Emp> getTermList3(Map<String, String> m) {
+		List<Emp> list = null;
+		try (SqlSession session = getSession()) {
+			list = session.selectList("termlist3", m);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+	}
 
 }

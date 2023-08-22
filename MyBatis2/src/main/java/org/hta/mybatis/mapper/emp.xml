@@ -10,6 +10,16 @@
   	where hiredate between #{start} and #{end}
   </select>
   
+  <!-- <where>요소는 조건에 따라 where을 추가합니다. -->
+  <select id = "termlist2" parameterType="map" resultType="emp" >
+  	select * 
+  	from emp
+  	<where>
+  		<if test = 'start!="" and end!=""'>
+  			hiredate between #{start} and #{end}
+  		</if>
+  	</where>
+  </select>
   
   </mapper>
   

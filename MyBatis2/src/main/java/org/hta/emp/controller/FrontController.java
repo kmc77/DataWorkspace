@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.Action;
 
 
 
@@ -23,7 +22,8 @@ import javax.swing.Action;
 		   String contextPath = request.getContextPath();
 		   String command = RequestURI.substring(contextPath.length());
 		   ActionForward forward = null;
-		   Term action = null;
+		   Action action = null;
+		   
 		   
 		   System.out.println("RequestURI=" + RequestURI);
 		   System.out.println("contextPath=" + contextPath);
