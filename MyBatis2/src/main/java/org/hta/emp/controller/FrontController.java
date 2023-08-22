@@ -31,15 +31,15 @@ import javax.swing.Action;
 		   
 
 			switch (command) {
-			case "/term.net":
+			case "/term.emp":
 				action = new Term();
 				break;
 				
-			case "/Term2.net":
+			case "/Term2.emp":
 				action = new Term2();
 				break;
 				
-			case "/Term3.net":
+			case "/Term3.emp":
 				action = new Term3();
 				break;
 				

@@ -30,7 +30,7 @@ public class Term implements Action {
         request.setAttribute("end", m.get("end"));
         
         ActionForward forward = new ActionForward();
-        forward.setPath("_.where/list1.jsp");
+        forward.setPath("_1.where/list1.jsp");
         forward.setRedirect(false);
         return forward;
     }

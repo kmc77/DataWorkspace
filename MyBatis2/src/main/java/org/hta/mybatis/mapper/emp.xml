@@ -4,6 +4,13 @@
   
   <mapper namespace ="org.hta.emp">
   
+  <select id="termlist" resultType="emp" parameterType="java.util.Map">
+  	select *
+  	from emp
+  	where hiredate between #{start} and #{end}
+  </select>
+  
+  
   </mapper>
   
 
