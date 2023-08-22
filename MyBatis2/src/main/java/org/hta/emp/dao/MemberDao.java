@@ -1,4 +1,4 @@
-package org.hta.member.dao;
+package org.hta.emp.dao;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -9,7 +9,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.hta.member.domain.Member;
+import org.hta.emp.domain.Member;
 
 public class MemberDao {
 	
