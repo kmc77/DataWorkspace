@@ -35,11 +35,11 @@ import javax.servlet.http.HttpServletResponse;
 				action = new Term();
 				break;
 				
-			case "/Term2.emp":
+			case "/term2.emp":
 				action = new Term2();
 				break;
 				
-			case "/Term3.emp":
+			case "/term3.emp":
 				action = new Term3();
 				break;
 				

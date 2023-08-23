@@ -28,7 +28,7 @@ public class Term2 implements Action {
 		request.setAttribute("list", list);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("/where/list2.jsp");
+		forward.setPath("/_1.where/list1.jsp");
 		return forward;
 	}
 }
