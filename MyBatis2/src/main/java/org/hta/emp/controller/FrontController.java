@@ -43,6 +43,10 @@ import javax.servlet.http.HttpServletResponse;
 				action = new Term3();
 				break;
 				
+			case "/check.emp":
+				action = new Check();
+				break;
+				
 			
 
 			}// switch end

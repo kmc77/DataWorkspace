@@ -61,4 +61,17 @@ public class EmpDAO {
 		return list;
 	}
 
+
+
+	public List<Emp> getCheck(Map<String, Object> map) {
+		List<Emp> list = null;
+		try (SqlSession session = getSession()) {
+			list = session.selectList("deptnocheck", map);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+	}
+
 }
