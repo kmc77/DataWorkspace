@@ -19,16 +19,18 @@ public class Term3 implements Action {
 			throws ServletException, IOException {
 		EmpDAO dao = new EmpDAO();
 		Map<String, String> m = new HashMap<>();
-		//startday, endday를 선택하지 않은 경우
-		//request.getParameter("startday")는 "" 입니다.
-		//request.getParameter("endday")는 "" 입니다.
 		m.put("start", request.getParameter("startday"));
 		m.put("end", request.getParameter("endday"));
-		List<Emp> list = dao.getTermList2(m);
-		request.setAttribute("list", list);
+		m.put("deptno", request.getParameter("deptno"));
+		
+		List<Emp> list = dao.getTermList3(m);
 		ActionForward forward = new ActionForward();
+		request.setAttribute("list", list);
+		request.setAttribute("start", m.get("start"));
+		request.setAttribute("end", m.get("end") );
+		request.setAttribute("deptno", m.get("deptno"));
+		forward.setPath("/_1.where/list2.jsp");
 		forward.setRedirect(false);
-		forward.setPath("/_1.where/list1.jsp");
 		return forward;
 	}
 

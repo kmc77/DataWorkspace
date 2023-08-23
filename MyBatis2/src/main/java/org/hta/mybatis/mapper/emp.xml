@@ -21,6 +21,24 @@
   	</where>
   </select>
   
+  
+  <!-- <where> 요소는 조건에 따라 where을 추가합니다.
+  		where 다음에 and나 or로 시작하면 and나 or을 삭제합니다.
+   -->
+   
+     <select id = "termlist3" parameterType="map" resultType="emp" >
+  	select * 
+  	from emp
+  	<where>
+  		<if test = 'start!="" and end!=""'>
+  			hiredate between #{start} and #{end}
+  		</if>
+  		<if test='deptno!=""'>
+  			and deptno=#{deptno}
+  		</if>
+  	</where>
+  </select>
+  
   </mapper>
   
 
