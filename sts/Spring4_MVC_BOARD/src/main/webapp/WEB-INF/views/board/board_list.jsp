@@ -7,8 +7,37 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
- 
- <script src="${pageContext.request.contextPath}/resources/js/jquery-3.7.0.js"></script>
+  <jsp:include page="header.jsp" />
+  <style>
+    select.form-control {
+      width: auto;
+      margin-bottom: 2em;
+      display: inline-block
+    }
+
+    .rows {
+      text-align: right;
+    }
+
+    .gray {
+      color: gray;
+    }
+
+    body > div > table > thead > tr:nth-child(2) > th:nth-child(1){width:8%}
+    body > div > table > thead > tr:nth-child(2) > th:nth-child(2){width:50%}
+    body > div > table > thead > tr:nth-child(2) > th:nth-child(3){width:14%}
+    body > div > table > thead > tr:nth-child(2) > th:nth-child(4){width:17%}
+    body > div > table > thead > tr:nth-child(2) > th:nth-child(5){width:11%}
+  </style>
+  <script>
+  const result="${result}";
+  if(result == 'deleteSuccess') {
+	  alert("삭제 성공 입니다.")
+  } else if(result == 'updateSuccess') {
+	  alert("회원 정보가 수정되었습니다.")
+  }
+  </script>
+  <script src="../resources/js/list.js"></script>
   <title>MVC 게시판</title>
 </head>
 <body>
