@@ -97,7 +97,12 @@
                     </c:if>	
                     
                     <a href="detail?num=${b.BOARD_NUM}">
-                            <c:out value="${b.BOARD_SUBJECT}" escapeXml="true"/>
+                    	<c:if test="${b.BOARD_SUBJECT.length()>=20}">	
+                            <c:out value="${b.BOARD_SUBJECT.substring(0,20)}" escapeXml="true"/>
+                    		</c:if>
+                    	<c:if test="${b.BOARD_SUBJECT.length()<20}">	
+                            <c:out value="${b.BOARD_SUBJECT}"/>
+                    		</c:if>	
                     </a>
             </div>
            </td>

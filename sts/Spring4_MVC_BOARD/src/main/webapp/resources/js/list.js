@@ -55,18 +55,18 @@ function ajax(sdata) {
                 let output = "<tbody>";
                 $(data.boardlist).each(function(index, item) {
                     output += '<tr><td>' + (num--) + '</td>';
-                    const blank_count = item.board_re_lev * 2 + 1;
+                    const blank_count = item.board_RE_LEV * 2 + 1;
                     let blank = ' ';
                     for (let i = 0; i < blank_count; i++) {
                         blank += '  ';
                     }
 
                     let img = "";
-                    if (item.board_re_lev > 0) {
+                    if (item.board_RE_LEV > 0) {
                         img = "<img src='image/line.gif'>";
                     }
 
-                    let subject = item.board_subject;
+                    let subject = item.board_SUBJECT;
                     if (subject.length >= 20) {
                         subject = subject.substr(0, 20) + "..."; //0부터 20개 부분 문자열 추출
                     }

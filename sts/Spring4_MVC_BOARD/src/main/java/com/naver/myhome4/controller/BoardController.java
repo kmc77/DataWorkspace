@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -181,5 +182,40 @@ public class BoardController {
 	   return map;
 	   
    }
+   
+   @GetMapping("/detail")
+   public ModelAndView Detail(
+		   int num, ModelAndView mv,
+		   HttpServletRequest request,
+		   @RequestHeader(value="referer", required=false) String beforeURL) {
+	   /*
+	    1. String beforeURL = request.getHeader("refere"); 의미로
+	       어느 주소에서 detail로 이동했는지 header의 정보 중에서  "refere"를 통해 알 수 있습니다.
+	    2. 수정 후 이곳으로 이동하는 경우 조회수는 증가하지 않도록 합니다.
+	    3. myhome4/board/list에서 제목을 클릭한 경우 조회수가 증가하도록 합니다.
+	    4. 주소창에서 http://localhost:8088/myhome4/board/detail?num=5 엔터
+	       refere는 header에 존재하지 않아 오류 발생하므로
+	       required=false로 설정 합니다. 이 경우 beforeURL의 값은 null입니다.
+	    */
+	   
+	   logger.info("refere:" + beforeURL);
+	   if(beforeURL!=null && beforeURL.endsWith("list")) {
+		   boardService.setReadCountUpdate(num);
+	   }
+	   
+	   Board board = boardService.getDetail(num);
+	   
+	   if(board == null) {
+		   logger.info("상세보기 실패");
+		   mv.setViewName("error/error");
+		   mv.addObject("url", request.getRequestURL());
+	   } else {
+	        mv.setViewName("board/detail");
+	        mv.addObject("board", board);
+	    }
+
+	    return mv;
+	}
+		   
 
 }
