@@ -21,6 +21,8 @@ C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.ecli
 \Spring3_MVC_annotation\src\main\java
 C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\844767081.index
 \Spring3_MVC_annotation\src\main\java
+D:\2023_05_03\sts\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1977948776.index
+\Spring4_MVC_BOARD\src\main\java
 C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2855194611.index
 \Spring3_MVC_annotation\src\main\java
 C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1273975321.index

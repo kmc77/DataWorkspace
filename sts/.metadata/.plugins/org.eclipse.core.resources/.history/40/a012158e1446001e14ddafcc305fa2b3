@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Boards">
+
+<select id="count" resultType="int">
+		select count(*) from board
+	</select>
+	
+	<!-- 문법 오류 
+		where rnum >= #{start}
+		==> 해결법
+			① where rnum &gt;= #{start}
+			② where rnum <![CDATA[  >=
+		 -->
+		 
+	<select id="list" parameterType="java.util.Map" resultType="board">
+		select * from member where id = #{id}
+	</select>	 
+	
+</mapper>
