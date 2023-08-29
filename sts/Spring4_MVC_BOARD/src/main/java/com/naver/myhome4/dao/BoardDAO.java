@@ -20,4 +20,12 @@ public class BoardDAO {
 		this.sqlSession=sqlSession;
 	}
 
+	public int getListCount() {
+		return sqlSession.selectOne("Boards.count");
+	}
+
+	public List<Board> getBoardList(HashMap<String, Integer> map) {
+		return sqlSession.selectList("Boards.list", map);
+	}
+
 }

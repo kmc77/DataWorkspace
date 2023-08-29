@@ -22,14 +22,18 @@ public class BoardServicelmpl implements BoardService {
 
 	@Override
 	public int getListCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.getListCount();
 	}
 
 	@Override
 	public List<Board> getBoardList(int page, int limit) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		int startrow = (page-1)*limit+1;
+		int endrow = startrow + limit -1;
+		map.put("start", startrow);
+		map.put("end", endrow);
+		return dao.getBoardList(map);
 	}
 
 	@Override
