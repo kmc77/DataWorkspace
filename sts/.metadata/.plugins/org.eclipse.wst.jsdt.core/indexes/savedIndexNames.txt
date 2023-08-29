@@ -1,14 +1,13 @@
-INDEX VERSION 1.4+C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1145067459.index
-947794170.index
-852839128.index
-2702854883.index
-2286777853.index
-636673458.index
-1977948776.index
-2401722669.index
+INDEX VERSION 1.4+D:\2023_05_03\sts\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 2156590704.index
-2279307678.index
+2401722669.index
 624664473.index
-2376927984.index
+493696561.index
+1226898270.index
+3629669238.index
+1145067459.index
+852839128.index
 2225184271.index
+1507928192.index
+4212068908.index
+2702854883.index

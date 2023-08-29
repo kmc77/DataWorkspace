@@ -33,6 +33,8 @@ C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.ecli
 \Spring4_MVC_BOARD\src\main\java
 C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1977948776.index
 \Spring4_MVC_BOARD\src\main\java
+D:\2023_05_03\sts\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1507928192.index
+\Spring4_MVC_BOARD\src\main\java
 C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1507928192.index
 \Spring4_MVC_BOARD\src\main\java
 C:\Users\jhta\Documents\workspace-sts-3.9.18.RELEASE\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\896491455.index
