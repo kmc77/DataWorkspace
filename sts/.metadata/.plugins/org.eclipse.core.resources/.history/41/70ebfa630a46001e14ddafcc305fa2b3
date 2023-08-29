@@ -1,0 +1,22 @@
+package com.naver.myhome4.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.naver.myhome4.dao.BoardDAO;
+import com.naver.myhome4.domain.Board;
+
+@Service
+public class BoardServicelmpl implements BoardService {
+
+	private BoardDAO dao;
+	
+	@Autowired
+	public BoardServiceImpl(BoardDAO dao) {
+		this.dao = dao;
+	}
+}
