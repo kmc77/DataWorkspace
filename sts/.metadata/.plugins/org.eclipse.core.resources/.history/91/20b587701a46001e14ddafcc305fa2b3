@@ -92,18 +92,18 @@
                         <img src='${pageContext.request.contextPath}/resources/image/line.gif'>
                     </c:if>
                     
-                    <c:if test="${b.BOARD_RE_LEV == 0}"> <%--원문인 경우 --%>
+                    <c:if test="${b.board_re_lev == 0}"> <%--원문인 경우 --%>
                         &nbsp;
                     </c:if>	
                     
                     <a href="detail?num=${b.BOARD_NUM}">
                             <c:out value="${b.BOARD_SUBJECT}" escapeXml="true"/>
-                    </a>
+                    </a>[${b.cnt}]
             </div>
            </td>
-          <td><div>${b.BOARD_NAME}</div>
-          <td><div>${b.BOARD_DATE}</div>
-          <td><div>${b.BOARD_READCOUNT}</div>
+          <td><div>${b.board_name}</div>
+          <td><div>${b.board_date}</div>
+          <td><div>${b.board_readcount}</div>
           </tr>
          </c:forEach>
         </tbody>

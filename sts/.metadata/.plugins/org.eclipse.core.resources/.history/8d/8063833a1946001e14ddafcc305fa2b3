@@ -82,28 +82,33 @@
             <td><%-- 제목 --%> 
                 <div>
                     <%-- 답변글 제목앞에 여백 처리 부분
-                            BOARD_RE_LEV, BOARD_NUM,
-                            BOARD_SUBJECT, BOARD_NAME, BOARD_DATE,
-                            BOARD_READCOUNT : property 이름  --%>
-                    <c:if test="${b.BOARD_RE_LEV != 0}"> <%--다블인 경우 --%>
-                        <c:forEach var="a" begin="0" end="${b.BOARD_RE_LEV*2}" step="1">
+                            board_re_lev, board_num,
+                            board_subject, board_name, board_date,
+                            board_readcount : property 이름  --%>
+                    <c:if test="${b.board_re_lev != 0}"> <%--다블인 경우 --%>
+                        <c:forEach var="a" begin="0" end="${b.board_re_lev*2}" step="1">
                             &nbsp;
                         </c:forEach>
-                        <img src='${pageContext.request.contextPath}/resources/image/line.gif'>
+                        <img src='image/line.gif'>
                     </c:if>
                     
-                    <c:if test="${b.BOARD_RE_LEV == 0}"> <%--원문인 경우 --%>
+                    <c:if test="${b.board_re_lev == 0}"> <%--원문인 경우 --%>
                         &nbsp;
                     </c:if>	
                     
-                    <a href="detail?num=${b.BOARD_NUM}">
-                            <c:out value="${b.BOARD_SUBJECT}" escapeXml="true"/>
-                    </a>
+                    <a href="BoardDetailAction.bo?num=${b.board_num}">
+                        <c:if test="${b.board_subject.length() >= 20}">
+                            <c:out value="${b.board_subject.substring(0,20)}..."/>
+                        </c:if>
+                        <c:if test="${b.board_subject.length()<20}">
+                            <c:out value="${b.board_subject}"/>
+                        </c:if>  
+                    </a>[${b.cnt}]
             </div>
            </td>
-          <td><div>${b.BOARD_NAME}</div>
-          <td><div>${b.BOARD_DATE}</div>
-          <td><div>${b.BOARD_READCOUNT}</div>
+          <td><div>${b.board_name}</div>
+          <td><div>${b.board_date}</div>
+          <td><div>${b.board_readcount}</div>
           </tr>
          </c:forEach>
         </tbody>
