@@ -1,0 +1,28 @@
+1692863010044	Rename package 'com.naver.myho'
+1692864518685	Copy file
+1692865180260	Rename resource 'applicationContext.xml'
+1692866229943	Copy package
+1692866246482	Rename package 'com.naver.myhome3.sample2'
+1692866334893	Rename type 'Bosbean'
+1692866344821	Rename type 'Bbsbean'
+1692866376954	Rename type 'HomeController'
+1692866396248	Rename package 'com.naver.myhome3.controller'
+1692866459560	Move compilation unit
+1692922819875	Move 'bbs-servlet.xml' to 'appServlet'
+1692922833927	Delete element
+1692922997633	Delete element
+1692923002424	Delete element
+1692924663569	Delete element
+1692924820364	Rename resource 'login.jsp'
+1692924825116	Move 'loginForm.jsp' to 'View'
+1692925474539	Rename resource 'View'
+1692925666561	Rename resource 'view'
+1692925859502	Rename resource 'View'
+1692926734396	Rename resource 'login_ok.do.jsp'
+1692926862390	Rename resource 'list.jsp'
+1692927229678	Rename resource 'login_ok.do.jsp'
+1692927350649	Move 'web.xml' to 'WEB-INF'
+1692927384949	Rename resource 'View2'
+1692930734093	Copy file
+1692932875057	Copy file
+1692933358530	Copy file

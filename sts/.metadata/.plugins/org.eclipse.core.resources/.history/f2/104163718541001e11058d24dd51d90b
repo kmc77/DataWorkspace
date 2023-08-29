@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	해당 패키지에서 New -> Other -> Spring Bean Configuration File -> Next
+	-> applicationContext 입력 -> Next -> beans 클릭 -> Finish
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="m" class="som.naver.myhome1.sample3.MessageBeanEn"
+  		scope="singleton"/>
+    <!-- 필요한 프로퍼티 설정 -->
+  </bean>
+  
+  <bean id="m1" class="som.naver.myhome1.sample3.MessageBeanKo">
+    <!-- 필요한 프로퍼티 설정 -->
+  </bean>
+  
+</beans>

@@ -1,0 +1,19 @@
+package com.naver.myhome3.checkbox;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class CheckboxController_int {
+	
+	
+	@RequestMapping(value = "/check.do", method = RequestMethod.POST)
+	public String check(@RequestParam(value = "hobby", required = false) int[] hobbies, Model model) {
+		model.addAttribute("hobbies", hobbies);
+		return "check/checkForm";
+	}
+	
+}

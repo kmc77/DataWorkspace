@@ -1,0 +1,37 @@
+1692841227090	Rename package 'com.naver.myhome1'
+1692841650641	Copy compilation unit
+1692844187580	Copy package
+1692845059972	Rename type 'HelloApp'
+1692845147054	Rename resource 'applicationContext.xml'
+1692846734798	Copy package
+1692846766467	Copy compilation unit
+1692846878822	Rename type 'HelloApp_Autowired'
+1692846897538	Delete element
+1692846913918	Rename resource 'applicationContext1.xml'
+1692848037420	Delete element
+1692848140411	Copy package
+1692848153157	Rename resource 'applicationContext2.xml'
+1692848485604	Delete element
+1692848501821	Rename type 'HelloApp_Qualifier'
+1692853671798	Copy package
+1692854426139	Rename type 'HelloApp_Component'
+1692854447178	Rename resource 'applicationContext4.xml'
+1692854555129	Delete element
+1692854558346	Delete element
+1692854579093	Delete element
+1692854587105	Delete element
+1692854652493	Copy package
+1692854859576	Copy file
+1692855510602	Copy compilation unit
+1692855742029	Copy compilation unit
+1692856890860	Copy package
+1692856899087	Delete elements
+1692857082354	Copy file
+1692857085335	Rename resource 'applicationContext2.xml'
+1692858611620	Rename resource 'data.txt'
+1692858694766	Delete element
+1692859315919	Copy compilation unit
+1692859324320	Copy compilation unit
+1692859344227	Copy compilation unit
+1692859368276	Copy compilation unit
+1692859378363	Copy file

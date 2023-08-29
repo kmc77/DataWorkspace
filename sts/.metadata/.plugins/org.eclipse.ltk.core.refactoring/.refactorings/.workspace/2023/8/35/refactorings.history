@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Spring4&apos; to &apos;Spring4_MVC_BOARD&apos;" description="Rename resource &apos;Spring4&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Spring4" name="Spring4_MVC_BOARD" stamp="1693184737370" updateReferences="true"/>
+</session>

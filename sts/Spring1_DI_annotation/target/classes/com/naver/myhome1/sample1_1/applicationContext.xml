@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	해당 패키지에서 New -> Other -> Spring Bean Configuration File -> Next
+	-> applicationContext 입력 -> Next -> beans 클릭 -> Finish
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean 생성합니다. 
+         List타입 매핑의 경우
+    -->
+	<bean id="m" class="com.naver.myhome1.sample1_1.MessageBeanEn" />
+	
+	<bean id="m2" class="com.naver.myhome1.sample1_1.MessageMultiple">
+		<property name="bean">
+			<ref bean="m"/>
+		</property>
+		</bean>
+	
+    
+</beans>

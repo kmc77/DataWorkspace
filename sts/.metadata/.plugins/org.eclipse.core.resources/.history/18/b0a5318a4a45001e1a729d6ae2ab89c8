@@ -1,0 +1,18 @@
+package com.naver.myhome4.domain;
+
+import org.springframework.web.multipart.MultipartFile;
+
+public class Board {
+	private int BOARD_NUM; //글번호
+	private String BOARD_NAME; //글 작성자
+	private String BOARD_PASS; //글 비밀번호
+	private String BOARD_SUBJCT; //글 제목
+	private String BOARD_CONTENT; //글 내용
+	private String BOARD_FILE; //실제 저장된 파일의 이름
+	private int BOARD_RE_REF; //답변 글 작성시 참조되는 글의 번호
+	private int BOARD_RE_LEV; //답변 글의 깊이
+	private int BOARD_RE_SEQ; //답변 글의 순서
+	private int BOARD_READCOUNT; //글의 조회수
+	
+
+}

@@ -1,0 +1,22 @@
+package com.naver.myhome3.checkbox;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class ParamController2_int {
+	
+	
+	@RequestMapping(value = "/check.do", method = RequestMethod.POST)
+	public String check(int check, Model model, HttpServletRequest request) {
+		model.addAttribute("check", check);
+		model.addAttribute("url", request.getRequestURI());
+		return "param/list1";
+	}
+	
+}

@@ -1,0 +1,10 @@
+package som.naver.myhome1.sample3;
+
+public class HelloApp4_prototype {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

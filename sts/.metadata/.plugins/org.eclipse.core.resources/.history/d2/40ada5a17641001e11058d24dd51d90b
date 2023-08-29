@@ -1,0 +1,11 @@
+package com.naver.myhome1.sample1;
+
+public class HelloApp {
+	private char[] MessageBeanEn;
+
+	public void sayHello(String name) {
+		
+		System.out.println(MessageBeanEn);
+	}
+
+}

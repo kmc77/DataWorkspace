@@ -1,0 +1,17 @@
+package com.naver.myhome3.controller;
+
+import org.springframework.stereotype.Controller;
+
+
+import com.naver.myhome3.model.BbsBean;
+
+/*
+ 	1. @Controller 애노테이션 사용한 컨트롤러 클래스를 이용해서 특정 요청 URL을 처리합니다.
+ 	2. @Component를 상속한 @Controller는 @Comtroller가 붙은 클래스의 객체를 메모리에 생성하는 기능을 제공합니다.
+ 	3. 단순히 객체를 생성하는 것에 그치지 않고 DispatcherServlet이 인식하는 Controller객체로 만들어 줍니다.
+ 	4. 스프링 컨테이너는 @Controller가 선언된 객체를 자동으로 Controller 객체로 인식합니다.
+ */
+@Controller
+public class LoginController {
+
+}

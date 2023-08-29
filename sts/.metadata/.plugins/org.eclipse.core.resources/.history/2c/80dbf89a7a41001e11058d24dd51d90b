@@ -1,0 +1,7 @@
+package som.naver.myhome1.sample2_1;
+
+public interface MessageBean {
+	
+	void sayHello(String name);
+
+}
