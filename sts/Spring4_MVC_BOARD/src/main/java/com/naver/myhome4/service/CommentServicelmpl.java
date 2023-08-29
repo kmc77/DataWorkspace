@@ -3,10 +3,12 @@ package com.naver.myhome4.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.naver.myhome4.dao.CommentDAO;
 import com.naver.myhome4.domain.Comment;
 
+@Service
 public class CommentServicelmpl implements CommentService{
 	
 	private CommentDAO dao;
