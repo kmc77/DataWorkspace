@@ -122,7 +122,7 @@ function ajax(sdata) {
 
 $(function() {
     $("button").click(function() {
-        location.href = "BoardWrite.bo";
+        location.href = "write";
     });
 
     $("#viewcount").change(function() {

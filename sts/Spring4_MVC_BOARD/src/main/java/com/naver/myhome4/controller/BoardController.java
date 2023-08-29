@@ -3,9 +3,12 @@ package com.naver.myhome4.controller;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.naver.myhome4.domain.Board;
@@ -13,6 +16,8 @@ import com.naver.myhome4.service.BoardService;
 import com.naver.myhome4.service.CommentService;
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 
@@ -64,6 +69,32 @@ public class BoardController {
 		mv.addObject("limit", limit);
 		return mv;
 		
+	}
+	
+	//글쓰기
+	@GetMapping(value = "/write") //board/write
+	public String board_write() {
+		return "board/board_write";
+	}
+	
+	@PostMapping("/add")
+	public String add(Board board, HttpServletRequest request)
+			throws Exception {
+		
+		MultipartFile uploadfile = board.getUploadfile();
+		
+		if(!uploadfile.isEmpty()) {
+			String fileName = uploadfile.getOriginalFilename();
+			board.setBOARD_ORIGINAL(fileName);
+			
+			String saveFolder = request.getSession().getServletContext().getRealPath("resources/upload");
+			String fileDBName = fileDBName(fileName, saveFolder);
+			logger.info("fileDBName = " + fileDBName);
+			
+			//transferTo(File path) : 업로드한 파일을 매개변수의 경로에 저장합니다.
+			
+			
+		}
 	}
 
 }
