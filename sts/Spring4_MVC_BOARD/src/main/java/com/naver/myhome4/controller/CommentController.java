@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.naver.myhome4.domain.Comment;
 import com.naver.myhome4.service.CommentService;
 
-@Controller // localhost/myhome4/comment로 시작하는~
-@RequestMapping(value = "/comment")
+@Controller
+@RequestMapping(value = "comment")
 public class CommentController {
-	
+
 	private CommentService commentService;
-	
+
 	@Autowired
 	public CommentController(CommentService commentService) {
 		this.commentService = commentService;
@@ -34,5 +34,4 @@ public class CommentController {
 		map.put("listcount", listcount);
 		return map;
 	}
-
 }

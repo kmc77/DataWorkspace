@@ -29,12 +29,12 @@
 		<item key="WHOLE_WORD" value="false"/>
 		<item key="SEARCH_DERIVED" value="false"/>
 		<item key="SEARCH_IN_BINARIES" value="false"/>
-		<item key="HISTORY_SIZE" value="3"/>
+		<item key="HISTORY_SIZE" value="7"/>
 		<section name="HISTORY0">
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="joinProcess"/>
+			<item key="textPattern" value="memberDelete"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -49,7 +49,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="&quot;c&quot;"/>
+			<item key="textPattern" value="memberInfo.net"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -58,6 +58,54 @@
 			</list>
 		</section>
 		<section name="HISTORY2">
+			<item key="ignoreCase" value="true"/>
+			<item key="isRegExSearch" value="false"/>
+			<item key="isWholeWord" value="false"/>
+			<item key="textPattern" value="board_write"/>
+			<item key="scope" value="0"/>
+			<list key="fileNamePatterns">
+				<item value="*.jsp"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY3">
+			<item key="ignoreCase" value="true"/>
+			<item key="isRegExSearch" value="false"/>
+			<item key="isWholeWord" value="false"/>
+			<item key="textPattern" value="board_board_write"/>
+			<item key="scope" value="0"/>
+			<list key="fileNamePatterns">
+				<item value="*.jsp"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY4">
+			<item key="ignoreCase" value="true"/>
+			<item key="isRegExSearch" value="false"/>
+			<item key="isWholeWord" value="false"/>
+			<item key="textPattern" value="joinProcess"/>
+			<item key="scope" value="0"/>
+			<list key="fileNamePatterns">
+				<item value="*.jsp"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY5">
+			<item key="ignoreCase" value="true"/>
+			<item key="isRegExSearch" value="false"/>
+			<item key="isWholeWord" value="false"/>
+			<item key="textPattern" value="&quot;c&quot;"/>
+			<item key="scope" value="0"/>
+			<list key="fileNamePatterns">
+				<item value="*.jsp"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY6">
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
@@ -77,7 +125,7 @@
 		<item key="DIALOG_X_ORIGIN" value="110"/>
 		<item key="DIALOG_Y_ORIGIN" value="199"/>
 		<item key="DIALOG_WIDTH" value="804"/>
-		<item key="DIALOG_HEIGHT" value="459"/>
+		<item key="DIALOG_HEIGHT" value="464"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 	<section name="">
@@ -88,5 +136,11 @@
 	</section>
 	<section name="">
 		<item key="org.eclipse.search.resultpage.limit" value="1000"/>
+		<item key="org.eclipse.jdt.search.resultpage.limit" value="1000"/>
+		<item key="org.eclipse.jdt.search.resultpage.limit_enabled" value="TRUE"/>
+	</section>
+	<section name="org.eclipse.jdt.ui.JavaSearchResultPage">
+		<item key="org.eclipse.jdt.search.resultpage.limit" value="1000"/>
+		<item key="org.eclipse.jdt.search.resultpage.limit_enabled" value="TRUE"/>
 	</section>
 </section>
