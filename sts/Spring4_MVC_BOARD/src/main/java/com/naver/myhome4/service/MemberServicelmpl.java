@@ -53,7 +53,7 @@ public class MemberServicelmpl implements MemberService {
 
 	@Override
 	public void delete(String id) {
-		// TODO Auto-generated method stub
+	   dao.delete(id);
 		
 	}
 

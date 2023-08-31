@@ -76,4 +76,9 @@
 		like #{search_word}
 		</if>
 	</sql>
+	
+	   <delete id="delete" parameterType="String">
+      DELETE FROM member WHERE id = #{id}
+   </delete>
+	
 </mapper>

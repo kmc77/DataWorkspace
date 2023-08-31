@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.naver.myhome4.domain.Board;
 import com.naver.myhome4.domain.Member;
 
 @Repository
@@ -43,6 +44,9 @@ public class MemberDAO {
 		return sqlSession.selectOne("Members.searchCount", map);
 	}
 
+	public void delete(String id) {
+		  sqlSession.delete("Members.delete", id);
+		}
 	
 }
 

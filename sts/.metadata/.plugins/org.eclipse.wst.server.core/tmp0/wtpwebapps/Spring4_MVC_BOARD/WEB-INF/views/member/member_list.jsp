@@ -165,7 +165,7 @@ td:nth-child(1) {
 						<tr>
 							<td><a href="info?id=${m.id}">${m.id}</a></td>
 							<td>${m.name}</td>
-							<td><a href="memberDelete.net?id=${m.id}" class="deleteBtn">삭제</a></td>
+							<td><a href="delete?id=${m.id}" class="deleteBtn">삭제</a></td>
 
 						</tr>
 					</c:forEach>

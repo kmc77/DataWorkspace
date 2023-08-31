@@ -150,6 +150,14 @@ public class MemberController {
 	    }
 	}
 	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String loginout(HttpSession session) {
+		session.invalidate();
+		return "redirect:login";
+	}
+	
+	
+	
 	//회원 정보 수정폼2
 		@RequestMapping(value = "/update", method = RequestMethod.GET)
 		public ModelAndView member_update(@SessionAttribute(name="id", required=false) String id, 
@@ -224,8 +232,8 @@ public class MemberController {
 	   Member m = memberservice.member_info(id);
 	   
 	   if (m != null) {
-	      mv.setViewName("member/member_info");
-	      mv.addObject("member", m);
+	      mv.setViewName("member/member_info2");
+	      mv.addObject("memberinfo", m);
 	   } else {
 		   mv.addObject("url", request.getRequestURL());
 	      mv.addObject("message", "회원 정보를 가져오는데 실패했습니다.");
@@ -234,5 +242,13 @@ public class MemberController {
 	   
 	   return mv;
 	}
-
+	
+	
+	
+	//삭제
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String member_delete(String id) {
+		memberservice.delete(id);
+	   return "redirect:list";
+	}
 }
