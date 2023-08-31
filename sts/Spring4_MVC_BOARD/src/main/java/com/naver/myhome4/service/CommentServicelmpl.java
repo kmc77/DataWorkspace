@@ -27,8 +27,14 @@ public class CommentServicelmpl implements CommentService {
 
 	@Override
 	public List<Comment> getCommentList(int board_num, int page) {
-		// TODO Auto-generated method stub
-		return null;
+		int startrow = 1;
+		int endrow = page * 3;
+		
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("board_num", board_num);
+		map.put("start", startrow);
+		map.put("end", endrow);
+		return dao.getCommentList(map);
 	}
 
 	@Override
