@@ -8,4 +8,19 @@
 		FROM comments
 		WHERE comment_board_num = #{boardNum}
 	</select>
+	
+	<select id="list" resultType="Comment" parameterType="map">
+      SELECT *
+      FROM ( select rownum rnum, c.*
+      		from(
+      			select num, id, content, reg_date, board_num
+      			from comments
+      			where board_num = #{board_num}
+      			order by reg_date desc
+      			) c
+      		where rownum &lt;= #{end}
+      		)
+      	where rnum between #{start} and #{end}		
+   </select>
+	
 </mapper>
