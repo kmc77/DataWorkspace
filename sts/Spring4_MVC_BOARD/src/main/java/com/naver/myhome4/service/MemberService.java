@@ -22,4 +22,5 @@ public interface MemberService {
 	
 	public int getSearchListCount(int index, String search_word);
 
+
 }

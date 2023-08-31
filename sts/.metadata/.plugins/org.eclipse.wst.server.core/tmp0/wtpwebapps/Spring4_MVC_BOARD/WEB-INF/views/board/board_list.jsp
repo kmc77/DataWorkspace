@@ -23,14 +23,16 @@ select.form-control{
 	body > div > table > thead > tr:nth-child(2) > th:nth-child(4){width:17%}
 	body > div > table > thead > tr:nth-child(2) > th:nth-child(5){width:11%}
 </style>
+
 <script>
-const result = "{result}";
+const result = "${result}";
 if(result == 'deleteSuccess') {
 	alert("삭제 성공 입니다.")
 }else if(result == 'updateSuccess') {
 	alert("회원 정보가 수정되었습니다.")
 }
 </script>
+
 	<script src="../resources/js/list.js"></script>
 	<title>MVC 게시판</title>
 </head>

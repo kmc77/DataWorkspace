@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -149,28 +150,22 @@ public class MemberController {
 	    }
 	}
 	
-	@GetMapping("/update")
-	public ModelAndView updateView(
-			 @RequestParam("id") String id, ModelAndView mv,
-	         HttpServletRequest request,
-	         @RequestHeader(value="referer", required=false) String beforeURL) {
-	         
-	    Member memberinfo = memberservice.member_info(id); 
-	    
-	    if (memberinfo == null) {
-	        logger.info("회원 수정 페이지 조회 실패");
-	        mv.setViewName("error/error");
-	        mv.addObject("url", request.getRequestURI());
-	        mv.addObject("message", "회원 수정 페이지 조회 실패입니다.");
-	    } else {
-	        logger.info("회원 수정 페이지 조회 성공");
-	        mv.setViewName("member/member_Info");
-	        mv.addObject("memberinfo", memberinfo);
-	    }
-	    
-	    return mv;
-	}
-	
+	//회원 정보 수정폼2
+		@RequestMapping(value = "/update", method = RequestMethod.GET)
+		public ModelAndView member_update(@SessionAttribute(name="id", required=false) String id, 
+				                          ModelAndView mv)  {
+			
+			if(id==null) {
+				mv.setViewName("redirect:login");
+				logger.info("id is null");
+			}else {
+			  Member m = memberservice.member_info(id);		
+			  mv.setViewName("member/member_updateForm");
+			  mv.addObject("memberinfo", m);
+			}
+			return mv;
+		}
+		
 	//수정 처리
 	@RequestMapping(value="/updateProcess", method = RequestMethod.POST)
 	public String updateProcess(Member member, Model model,
@@ -220,6 +215,24 @@ public class MemberController {
 		mv.addObject("search_field", index);
 		mv.addObject("search_word", search_word);
 		return mv;
+	}
+	
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
+	public ModelAndView member_info(@RequestParam("id") String id,
+									ModelAndView mv,
+									HttpServletRequest request) {
+	   Member m = memberservice.member_info(id);
+	   
+	   if (m != null) {
+	      mv.setViewName("member/member_info");
+	      mv.addObject("member", m);
+	   } else {
+		   mv.addObject("url", request.getRequestURL());
+	      mv.addObject("message", "회원 정보를 가져오는데 실패했습니다.");
+	      mv.setViewName("error/error");
+	   }
+	   
+	   return mv;
 	}
 
 }
