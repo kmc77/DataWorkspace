@@ -6,12 +6,15 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class CommentDAO {
-	
+
 	private SqlSessionTemplate sqlSession;
-	
+
 	@Autowired
 	public CommentDAO(SqlSessionTemplate sqlSession) {
-		this.sqlSession=sqlSession;
+		this.sqlSession = sqlSession;
 	}
-
+	
+	public int getListCount(int board_num) {
+		return sqlSession.selectOne("Comments.count",board_num);
+	}
 }

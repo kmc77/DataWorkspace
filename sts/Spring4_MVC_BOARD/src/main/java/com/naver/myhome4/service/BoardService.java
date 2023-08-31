@@ -6,7 +6,7 @@ import com.naver.myhome4.domain.Board;
 
 public interface BoardService {
 
-	//글의 갯수 구하기
+	// 글의 갯수 구하기
 	public int getListCount();
 
 	// 글 목록 보기
@@ -33,7 +33,7 @@ public interface BoardService {
 	// 글 등록하기
 	public void insertBoard(Board board) ;
 	
-	//BOARD_RE_SEQ값 수정
+    //BOARD_RE_SEQ값 수정
 	public int boardReplyUpdate(Board board);
 	
 

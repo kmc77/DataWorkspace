@@ -1,24 +1,23 @@
-drop table comments cascade constraints purge;
+drop table comments CASCADE CONSTRAINTS;
 
-CREATE TABLE comments(
-	num			number 		primary key,
-	id 			VARCHAR2(30) references member(id),
-	content 	VARCHAR2(200),
-	reg_date 	date,
-	comment_board_num 	number 	references board(board_num)
+
+create table comments(
+	num			number		 primary key,
+	id			varchar2(30) references member(id),
+	content 	varchar2(200),
+	reg_date	date,
+	board_num	number references board(board_num)
 				on delete cascade
 );
 
---게시판 글이 삭제되면 참조하는 댓극도 삭제됩니다.
---member가 삭제되면 member의 댓글도 삭제됩니다.
+CREATE TABLE comments (
+    num         NUMBER PRIMARY KEY,
+    id          VARCHAR2(30) REFERENCES member(id),
+    content     VARCHAR2(200),
+    reg_date    DATE,
+    board_num   NUMBER REFERENCES board(board_num)
+                    ON DELETE CASCADE
+);
 
-drop sequence com_seq;
-
---시퀀스를 생성합니다.
+  drop sequence com_seq;
 create sequence com_seq;
-
-create sequence comm_seq;
-
-delete comm;
-
-select * from comm;

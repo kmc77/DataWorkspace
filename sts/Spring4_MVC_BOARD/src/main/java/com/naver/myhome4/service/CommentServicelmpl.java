@@ -1,6 +1,8 @@
 package com.naver.myhome4.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,10 +11,10 @@ import com.naver.myhome4.dao.CommentDAO;
 import com.naver.myhome4.domain.Comment;
 
 @Service
-public class CommentServicelmpl implements CommentService{
-	
+public class CommentServicelmpl implements CommentService {
+
 	private CommentDAO dao;
-	
+
 	@Autowired
 	public CommentServicelmpl(CommentDAO dao) {
 		this.dao = dao;
@@ -20,8 +22,7 @@ public class CommentServicelmpl implements CommentService{
 
 	@Override
 	public int getListCount(int board_num) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.getListCount(board_num);
 	}
 
 	@Override

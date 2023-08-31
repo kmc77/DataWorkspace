@@ -1,21 +1,10 @@
 package com.naver.myhome4.domain;
 
 public class Comment {
-	
 	private int num;
 	private String id;
 	private String content;
-	private String reg_date; //2020-12-
-	private int board_num;
-	
-	
-	public String getReg_date() {
-		return reg_date;
-	}
-	
-	public void setReg_date(String reg_date) {
-		this.reg_date = reg_date;
-	}
+	private String reg_date; // 2020-12-24 16:08:35
 
 	public int getNum() {
 		return num;
@@ -41,6 +30,14 @@ public class Comment {
 		this.content = content;
 	}
 
+	public String getReg_date() {
+		return reg_date;
+	}
+
+	public void setReg_date(String reg_date) {
+		this.reg_date = reg_date;
+	}
+
 	public int getBoard_num() {
 		return board_num;
 	}
@@ -49,7 +46,6 @@ public class Comment {
 		this.board_num = board_num;
 	}
 
-
-	
+	private int board_num;
 
 }

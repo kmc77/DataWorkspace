@@ -2,9 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="${pageContext.request.contextPath }/resources/js/bootstarp.js">
+  <script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
 <style>
 body > nav.navbar {
 	justify-content: flex-end; /* 오른쪽 정렬 */
@@ -29,33 +31,31 @@ textarea {
 	resize: none;
 }
 
-
 </style>
-<c:if test = "${empty id}">
+<c:if test="${empty id}">
 	<script>
 		location.href = "${pageContext.request.contextPath}/member/login";
 	</script>
 </c:if>
 
 <nav class = "navbar navbar-expand-sm right-block navbar-dark">
-
 	<ul class="navbar-nav">
-		<c:if test = "${!empty id}">
+		<c:if test="${!empty id }">
 			<li class="nav-item">
-			<a class="nav-link" href="${pageContext.request.contextPath}/member/logout">
-				${id} 님(로그아웃)</a></li>
-			<li class="nav-item"><a class="nav-link" 
-				href="${pageContext.request.contextPath}/member/update">정보수정</a></li>
+			<a class = "nav-link" href="${pageContext.request.contextPath}/member/logout">
+					${id} 님(로그아웃)</a></li>
+			<li class="nav-item"><a class = "nav-link" 
+			href="${pageContext.request.contextPath}/member/update">정보수정</a></li>
 			
-		<c:if test = "${id=='admin'}">
-			<%-- Drop down --%>
-			<li class = "nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbardrop"
-					data-toggle="dropdown">관리자</a>
-				<div class = "dropdown-menu">
-					<a class="dropdown-item" href="${pageContext.request.contextPath}/member/list">회원정보</a>
-					<a class="dropdown-item" href="${pageContext.request.contextPath}/board/list">게시판</a>
-				</div></li>
+			<c:if test = "${id=='admin' }">
+				<%-- Drop down --%>
+				<li class = "nav-item dropdown">
+					<a class = "nav-link dropdown-toggle" href="#" id="navbardrop"
+						data-toggle="dropdown"> 관리자 </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="${pageContext.request.contextPath}/member/list">회원정보</a>
+						<a class="dropdown-item" href="${pageContext.request.contextPath}/board/list">게시판</a>
+					</div></li>
 			</c:if>
 		</c:if>
 	</ul>

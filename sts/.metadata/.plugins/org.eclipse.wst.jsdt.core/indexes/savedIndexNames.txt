@@ -6,9 +6,6 @@ INDEX VERSION 1.4+D:\2023_05_03\sts\.metadata\.plugins\org.eclipse.wst.jsdt.core
 493696561.index
 3629669238.index
 624664473.index
-2156590704.index
-1977948776.index
 1226898270.index
-1550499766.index
 2401722669.index
 4212068908.index

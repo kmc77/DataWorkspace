@@ -1,16 +1,38 @@
-drop table member cascade constraints purge;
---1. index.jspì—ì„œ ì‹œì‘ í•©ë‹ˆë‹¤.
---2. ê´€ë¦¬ì ê³„ì • admin, ë¹„ë²ˆ 1234ë¥¼ ë§Œë“­ë‹ˆë‹¤.
---3. ì‚¬ìš©ì ê³„ì •ì„ 3ê°œ ë§Œë“­ë‹ˆë‹¤.
+drop table member CASCADE CONSTRAINTS;
+--1. index.jsp ¿¡¼­ ½ÃÀÛÇÕ´Ï´Ù.
+--2. °ü¸®ÀÚ °èÁ¤ admin, ºñ¹ø 1234¸¦ ¸¸µì´Ï´Ù.
+--3. »ç¿ëÀÚ °èÁ¤À» 3°³ ¸¸µì´Ï´Ù.
 
-CREATE TABLE member(
-	id 		VARCHAR2(12),  
-	password 	VARCHAR2(10), 
-	name 		VARCHAR2(15),  
-	age 		number(2),  
-	gender 		VARCHAR2(6),  
-	email 		VARCHAR2(30),   
+create table member(
+	id			varchar2(12),
+	password	varchar2(10),
+	name		varchar2(15), --ÇÑ±Û 5±ÛÀÚ±îÁö °¡´É
+	age			Number(2),
+	gender		varchar2(3),
+	email		varchar2(30),
 	PRIMARY KEY(id)
+
 );
 
---memberfileì€ íšŒì› ì •ë³´ ìˆ˜ì •ì‹œ ì ìš©í•©ë‹ˆë‹¤.
+
+-- È¸¿ø Å×ÀÌºí »ı¼º
+CREATE TABLE member (
+    id          VARCHAR2(12),
+    password    VARCHAR2(10),
+    name        VARCHAR2(15), -- ÇÑ±Û 5±ÛÀÚ±îÁö °¡´É
+    age         NUMBER(2),
+    gender      VARCHAR2(3),
+    email       VARCHAR2(30),
+    PRIMARY KEY(id)
+);
+
+
+-- °ü¸®ÀÚ °èÁ¤ Ãß°¡
+INSERT INTO member (id, password)
+VALUES ('admin', '1234');
+
+INSERT INTO member (id, password)
+VALUES ('admin', '1234');
+
+INSERT INTO member (id, password)
+VALUES ('admin', '1234');

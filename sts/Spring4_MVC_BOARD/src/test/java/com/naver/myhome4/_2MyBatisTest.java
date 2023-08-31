@@ -11,30 +11,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"file:src/main/webapp/WEB-INF/spring/root-context.xml"})
 public class _2MyBatisTest {
 	
 	private static final Logger logger = LoggerFactory.getLogger(_2MyBatisTest.class);
-
-	@Autowired
-	private SqlSessionFactory sqlSessionFactory; //SqlSessionFactoryBean에서 만든 SqlSessionFactory를
-
-	//@Test // 현재 메서드를 테스트 대상으로 지정하는 애노테이션입니다.(org.junit.Test)
-	public void testSqlSessionFactory() {
-		logger.info("~~~~~sqlSessionFactory : " + sqlSessionFactory);
-		//sqlSesstionFactory : org.apache.ibatis.session.defaults.DefaultSqlSessionFactory@f0da9
-		//만약에 root-context.xml 파일에 설정한 SqlSessionFactory Bean 의 설정에 문제가 있다면
-		//이 코드에서 문제가 발생할 것입니다.
-		}
 	
 	@Autowired
-	private SqlSessionTemplate sqlSessionTemplate; //SqlSessionFactoryBean에서 만든 SqlSessionFactory를
-
-	@Test // 현재 메서드를 테스트 대상으로 지정하는 애노테이션입니다.(org.junit.Test)
-	public void testSqlSessionTemplate() {
-		logger.info("~~~~~SqlSessionTemplate : " + sqlSessionTemplate);
+	private SqlSessionFactory sqlSessionFactory;//sqlSessionFactoryBean에서 만든 sqlSessionFactory를 주입 받습니다.
+	
+	@Test 
+	public void testConnection() {
+		logger.info("~~~~~~~~~~~~~sqlSessionFactory : " + sqlSessionFactory);
+		//sqlSessionFactory : org.apache.ibatis.session.defaults.DefaultSqlSessionFactory@
+		//만약에 root-context.xml 파일에 설정한 sqlSessionFactory Bean 의 설정에 문제가 있다면 
+		//이 코드에서 문제가 발생할 것 입니다.
+		
 	}
+	
+	@Autowired
+	private SqlSessionTemplate sqlSessionTemplate;
+	
+	@Test
+	public void testSqlSessionTemplate() {
+		logger.info("~~~~~~~~~~~~~~~~~~~~~~SqlSessionTemplate : " + sqlSessionTemplate);
+	}
+	
 	
 }

@@ -6,18 +6,18 @@ import com.naver.myhome4.domain.Comment;
 
 public interface CommentService {
 
-	// ê¸€ì˜ ê°¯ìˆ˜ êµ¬í•˜ê¸°
+	// ±ÛÀÇ °¹¼ö ±¸ÇÏ±â
 	public int getListCount(int board_num);
 
-	// ëŒ“ê¸€ ëª©ë¡ ê°€ì ¸ì˜¤ê¸°
+	// ´ñ±Û ¸ñ·Ï °¡Á®¿À±â
 	public List<Comment> getCommentList(int board_num, int page);
 	
-	// ëŒ“ê¸€ ë“±ë¡í•˜ê¸°
+	// ´ñ±Û µî·ÏÇÏ±â
 	public int commentsInsert(Comment c);
 
-	// ëŒ“ê¸€ ì‚­ì œ
+	// ´ñ±Û »èÁ¦
 	public int commentsDelete(int num);
 
-	// ëŒ“ê¸€ ìˆ˜ì •
+	// ´ñ±Û ¼öÁ¤
 	public int commentsUpdate(Comment co);
 }
