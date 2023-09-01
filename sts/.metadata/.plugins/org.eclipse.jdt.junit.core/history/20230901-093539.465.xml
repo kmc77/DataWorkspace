@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="_3MyBatisTestDAO_Comment" project="Spring4_MVC_BOARD" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.naver.myhome4._3MyBatisTestDAO_Comment" time="0.243">
+    <testcase name="add" classname="com.naver.myhome4._3MyBatisTestDAO_Comment" time="0.23"/>
+    <testcase name="count" classname="com.naver.myhome4._3MyBatisTestDAO_Comment" time="0.013"/>
+  </testsuite>
+</testrun>

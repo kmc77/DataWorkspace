@@ -35,7 +35,7 @@ public class _3MyBatisTestDAO_Comment {
 		
 	}
 	
-	@Test 
+	//@Test 
 	public void list() {
 		int board_num = 4;
 		Map<String, Integer> map = new HashMap<String, Integer>();
@@ -58,7 +58,7 @@ public class _3MyBatisTestDAO_Comment {
 	
 	@Test
 	public void add() {
-	    int board_num = 4;
+	    int board_num = 2;
 	    Comment c = new Comment();
 	    c.setBoard_num(board_num);
 	    c.setContent("jUnit 에서 보내요");

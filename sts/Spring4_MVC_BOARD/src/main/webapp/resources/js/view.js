@@ -1,8 +1,8 @@
-let option = 1; // 선택한 등록순과 최신순을 수정, 삭제, 추가 후에도 유지되도록 하기위한 변수로 사용됩니다.
 $(function() {
     $("#comment table").hide();
     let page = 1;
     const count = parseInt($("#count").text());
+
     if (count !== 0) {
         getList(1);
     } else {
@@ -24,6 +24,7 @@ $(function() {
             dataType: "json",
             success: function(rdata) {
                 $('#count').text(rdata.listcount);
+
                 if (rdata.listcount > 0) {
                     $("#comment table").show();
                     $("#comment tbody").empty();
@@ -31,21 +32,19 @@ $(function() {
                     $(rdata.list).each(function() {
                         let output = '';
                         let img = '';
+
                         if ($("#loginid").val() === this.id) {
                             img =
                                 "<img src='../resources/image/pencil2.png' width='15px' class='update'>" +
                                 "<img src='../resources/image/delete.png' width='15px' class='remove'>" +
                                 "<input type='hidden' value='" + this.num + "' >";
                         }
+
                         output += "<tr><td>" + this.id + "</td>";
-
-                        // XSS(Cross-Site Scripting): 권한이 없는 사용자가 웹 사이트에 스크립트를 삽입하는 공격 기법
-                        // 이것을 방지하기 위한 방법으로 아래와 같이 text() 메서드를 사용하여 스크립트를 문자열로 만듭니다.
                         output += "<td>" + $("<div>").text(this.content).html() + "</td>";
-
                         output += "<td>" + this.reg_date.substring(0, 19) + img + "</td></tr>";
-                        $("#comment tbody").append(output);
 
+                        $("#comment tbody").append(output);
                     });
 
                     if (rdata.listcount > rdata.list.length) {
@@ -53,11 +52,8 @@ $(function() {
                     } else {
                         $("#message").text("");
                     }
-
                 } else {
-
                     $("#message").text("등록된 댓글이 없습니다.");
-
                     $("#comment table").hide();
                 }
             },
@@ -66,7 +62,22 @@ $(function() {
         	}
         });
      }
+     
+     // 글자수 제한 이벤트
+	$("#content").on('input', function() {
+	 	let content = $(this).val();
+	 	let length = content.length;
+
+	 	if (length > 50) {
+	     	length = 50;
+	     	content = content.substring(0, length);
+	     	$(this).val(content);
+	 	}
+
+	 	$(".float-left").text(length + "/50")
+	});
+	
+	$("#message").click(function() {
+		getList(++page);
+	});
 });
-		
-        	
-         

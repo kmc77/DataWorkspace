@@ -20,6 +20,8 @@
 			 }
 		 })
 	})
+	
+	
 </script>
 <style>
 body > div > table > tbody >tr:nth-child(1) {
@@ -169,9 +171,9 @@ form[action=down] > input[type=submit]{
       </div>
       <%-- id="myModal" end --%>
 
-      <div class="comment">
+      <div id="comment">
       	<button class="btn btn-info float-left">총 50개까지 가능합니다.</button>
-      	<button id = "write" class="btn btn-info float-left">등록</button>
+      	<button id = "write" class="btn btn-info float-right">등록</button>
       	<textarea rows=3 class="form-control"
       				id="content" maxLength="50"></textarea>
       	<table class="table table-striped">
