@@ -147,38 +147,5 @@ $(function() {
 		$(this).parent().parent().css('background-color', 'lightgray');// 수정할 행의  배경색을 변경합니다.
 		$(".remove").prop("disabled",true);// [수정완료][취소] 중에는 삭제를 클릭할 수 없도록 합니다.
 	})
-	
-	//취소를 클릭하는 경우
-	$("#comment").on('click', '.cancel', function() {
-		$("#comment tr").removeAttr('style'); //<tr style="background-color: white;">
-											  //<tr style="background-color: lightgray;">
-											  // style 속성을 제거 합니다.	
-		$(this).remove(); //선택한 취소 버튼을 제거합니다.
-		$("#write").text("등록"); //$("#write")의 "수정완료" 라벨을 "등록" 으로 변경합니다.
-		$("#comtent").val(''); //$("#content")의 값을 초기화 합니다.
-		$(".remove").prop("disabled", false); //삭제 할 수 있도록 합니다.
-		$(".float-left").text('총 50자까지 가능합니다.');
-		});
-		
-		//delete.png를 클릭하는 경우
-		$("#comment").on('click', '.remove', function() {
-			if(!confirm("정말 삭제하시겠습니까?")) {
-			return;
-			}
-			const deleteNum = $(this).next().val(); //댓글번호
-			$.ajax({
-				type : "post",
-				url : "../comment/delete",
-				data : {
-					"num" : deleteNum
-				},
-				success : function(result) {
-					if(result == 1) {
-						//page = 1;
-						getList(page); //삭제 후 해당 페이지의 내용을 보여줍니다.
-					}		
-				}
-			})
-		})		
 			
 });

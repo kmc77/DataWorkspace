@@ -162,10 +162,10 @@ $(function() {
 		
 		//delete.png를 클릭하는 경우
 		$("#comment").on('click', '.remove', function() {
-			if(!confirm("정말 삭제하시겠습니까?")) {
+			if(!comfirm("정말 삭제하시겠습니까?")) {
 			return;
 			}
-			const deleteNum = $(this).next().val(); //댓글번호
+			const deleteNum = $(this).next().val();
 			$.ajax({
 				type : "post",
 				url : "../comment/delete",
@@ -175,7 +175,7 @@ $(function() {
 				success : function(result) {
 					if(result == 1) {
 						//page = 1;
-						getList(page); //삭제 후 해당 페이지의 내용을 보여줍니다.
+						getList(page);
 					}		
 				}
 			})

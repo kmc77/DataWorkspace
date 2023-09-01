@@ -36,7 +36,7 @@
 	</update>
 
 	<delete id="delete" parameterType="int">
-		delete comments
+		UPDATE comments
 		WHERE num = #{num}
 	</delete>
     
