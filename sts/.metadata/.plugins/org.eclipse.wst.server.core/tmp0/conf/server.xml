@@ -66,7 +66,7 @@
     <Connector executor="tomcatThreadPool"
                port="8088" protocol="HTTP/1.1"
                connectionTimeout="20000"
-               redirectPort="8088"
+               redirectPort="8443"
                maxParameterCount="1000"
                />
     -->
