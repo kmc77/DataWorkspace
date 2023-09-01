@@ -5,27 +5,27 @@
 <mapper namespace="Comments">
 
 	<select id="count" resultType="int" parameterType="int">
-		SELECT COUNT(*)
-		FROM comments
-		WHERE board_num = #{board_num}
+		select count(*)
+		from comments
+		where board_num =#{board_num}
 	</select>
 
     <select id ="list" resultType="comment" parameterType="map">
-    	SELECT *
-    	FROM (SELECT rownum rnum, c.*
-    		FROM(
-    			SELECT num, id, content, reg_date, board_num
-    			FROM comments
-    			WHERE board_num = #{board_num}
-    			ORDER BY reg_date DESC
-    		    ) c
-    		WHERE rownum &lt;= #{end}
+    	select *
+    	from (select rownum rnum, c.*
+    		from(
+    			select num, id, content, reg_date, board_num
+    			from comments
+    			where board_num =#{board_num}
+    			order by reg_date desc
+    		    )c
+    		where rownum &lt;= #{end}
     	)
-    	WHERE rnum BETWEEN #{start} AND #{end}
+    	where rnum between #{start} and #{end}
     </select>
     
-    <insert id="insert" parameterType="com.naver.myhome4.domain.Comment">
-    	INSERT INTO comments (num, id, content, reg_date, board_num)
-        VALUES (com_seq.nextval, #{id}, #{content}, sysdate, #{boardNum})
+    <insert id="insert" parameterType="comment">
+    	insert into comments
+    	values(com_seq.nextval, #{id}, #{content}, sysdate, #{board_num})
     </insert>
 </mapper>

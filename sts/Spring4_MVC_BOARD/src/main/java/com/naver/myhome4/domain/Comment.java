@@ -5,6 +5,7 @@ public class Comment {
 	private String id;
 	private String content;
 	private String reg_date; // 2020-12-24 16:08:35
+	private int board_num;
 
 	public int getNum() {
 		return num;
@@ -46,6 +47,5 @@ public class Comment {
 		this.board_num = board_num;
 	}
 
-	private int board_num;
 
 }

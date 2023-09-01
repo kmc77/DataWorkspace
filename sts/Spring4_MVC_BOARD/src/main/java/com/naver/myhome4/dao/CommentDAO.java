@@ -27,4 +27,16 @@ public class CommentDAO {
 		return sqlSession.selectList("Comments.list", map);
 		
 	}
+
+	public int commentsInsert(Comment c) {
+		return sqlSession.insert("Comments.insert", c);
+	}
+
+	public int commentsDelete(int num) {
+		return sqlSession.delete("Comments.delete", num);
+	}
+
+	public int commentsUpdate(Comment co) {
+		return sqlSession.update("Comments.update", co);
+	}
 }

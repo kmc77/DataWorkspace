@@ -39,20 +39,17 @@ public class CommentServicelmpl implements CommentService {
 
 	@Override
 	public int commentsInsert(Comment c) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.commentsInsert(c);
 	}
 
 	@Override
 	public int commentsDelete(int num) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.commentsDelete(num);
 	}
 
 	@Override
 	public int commentsUpdate(Comment co) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.commentsUpdate(co);
 	}
 
 }
