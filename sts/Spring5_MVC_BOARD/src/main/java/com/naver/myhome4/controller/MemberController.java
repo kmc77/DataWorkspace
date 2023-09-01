@@ -29,6 +29,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.naver.myhome4.domain.Board;
 import com.naver.myhome4.domain.Member;
 import com.naver.myhome4.service.MemberService;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 /*
  * 
  *  @Component를 이용해서 스프링 컨테이너가 해당 클래스 객체를 생성하도록 설정할 수 있지만
@@ -49,10 +51,12 @@ public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
 	private MemberService memberservice;
+	private PasswordEncoder passwordEncoder;
 
 	@Autowired
-	public MemberController(MemberService memberservice) {
+	public MemberController(MemberService memberservice, PasswordEncoder passwordEncoder) {
 		this.memberservice = memberservice;
+		this.passwordEncoder=passwordEncoder;
 	}
 
 	/*
@@ -92,6 +96,12 @@ public class MemberController {
 	// 회원가입처리
 	@RequestMapping(value = "/joinProcess", method = RequestMethod.POST)
 	public String joinProcess(Member member, RedirectAttributes rattr, Model model, HttpServletRequest request) {
+		
+		//비밀번호 암호화 추가
+		String encPassword = passwordEncoder.encode(member.getPassword());
+		logger.info(encPassword);
+		member.setPassword(encPassword);
+		
 		int result = memberservice.insert(member);
 
 		// result=0;

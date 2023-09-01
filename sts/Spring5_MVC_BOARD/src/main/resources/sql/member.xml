@@ -6,23 +6,23 @@
 
 	<select id="idcheck" resultType="member" parameterType="String">
 		select *
-		from member where id = #{id}
+		from member2 where id = #{id}
 	</select>
 
 
 	<!-- member 테이블에 회원 정보를 삽입하는 쿼리 -->
 	<insert id="insert" parameterType="member">
-		INSERT INTO member 
+		INSERT INTO member2 
 		VALUES (#{id}, #{password}, #{name}, #{age}, #{gender}, #{email})
 	</insert>
 
 	<select id="memberinfo" resultType="member" parameterType="String">
 		select *
-		from member where id = #{id}
+		from member2 where id = #{id}
 	</select>
 	
 	<update id="update" parameterType="member">
-		update member
+		update member2
 		set name = #{name},   age = #{age},
 			gender = #{gender}, email = #{email}
 		where id = #{id}	
@@ -33,7 +33,7 @@
 		select *
 		from ( select rownum rnum, b.*
 				from (select *
-					from member
+					from member2
 					where id != 'admin'
 					
 	<if test = "search_field != null">
@@ -57,7 +57,7 @@
 	
 	<select id="searchCount" parameterType="map" resultType="int">
 		select count(*)
-		from member
+		from member2
 		where id != 'admin'
 		<include refid="search_"/>
 	</select>
@@ -78,7 +78,7 @@
 	</sql>
 	
 	   <delete id="delete" parameterType="String">
-      DELETE FROM member WHERE id = #{id}
+      DELETE FROM member2 WHERE id = #{id}
    </delete>
 	
 </mapper>

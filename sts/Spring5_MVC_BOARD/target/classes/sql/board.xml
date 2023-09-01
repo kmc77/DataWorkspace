@@ -58,7 +58,7 @@
 	 	<selectKey resultType="int" order="BEFORE" keyProperty="BOARD_NUM">
 	 		select nvl(max(BOARD_NUM), 0 ) + 1 from board
 	 	</selectKey>
-	 	insert into board
+	 	insert into board2
 	 	(BOARD_NUM,
 	 	 BOARD_NAME, BOARD_PASS, BOARD_SUBJECT,
 	 	 BOARD_CONTENT, BOARD_FILE, BOARD_ORIGINAL,
