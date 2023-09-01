@@ -27,6 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.naver.myhome4.domain.Board;
+import com.naver.myhome4.domain.MailVO;
 import com.naver.myhome4.domain.Member;
 import com.naver.myhome4.service.MemberService;
 import com.naver.myhome4.task.SendMail;
@@ -98,7 +99,7 @@ public class MemberController2 {
 
 	// 회원가입처리
 	@RequestMapping(value = "/joinProcess", method = RequestMethod.POST)
-	public String joinProcess(Member member, RedirectAttributes rattr, Model model, HttpServletRequest request) {
+	public String joinProcess(Member member, RedirectAttributes rattr, Model model, HttpServletRequest request, MailVO vo) {
 		
 		//비밀번호 암호화 추가
 		String encPassword = passwordEncoder.encode(member.getPassword());
@@ -117,6 +118,10 @@ public class MemberController2 {
 
 		// 삽입이 된 경우
 		if (result == 1) {
+			vo.setTo(member.getEmail());
+			vo.setContent(member.getId() + "님 회원 가입을 축하드립니다.");
+			sendMail.sendMail(vo);
+			
 			rattr.addFlashAttribute("result", "joinSuccess");
 			return "redirect:login";
 		} else {
