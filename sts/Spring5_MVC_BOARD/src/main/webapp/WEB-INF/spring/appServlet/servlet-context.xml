@@ -21,8 +21,17 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.naver.myhome54" />
+	<context:component-scan base-package="com.naver.myhome4" />
 	
+	<!-- BCryptPasswordEncoder란 
+		1. 스프링 시큐리티(Spring Security) 프레임워크에서 제공하는 클래스 중 하나로
+		   BCrypt 해싱 함수(BCrypt hashing function)를 사용해서 비밀번호를 인코딩해주는 메서드와
+		   데이터 베이스에 저장된 비밀번호와 일치하는지를 알려주는 메서드를 가진 클래스입니다.
+		2. PasswordEncoder 인터페이스를 구현한 클래스입니다.   
+	 -->
+	 
+	 <beans:bean id="bcryptPasswordEncoder"
+	 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 	
 	
 </beans:beans>
