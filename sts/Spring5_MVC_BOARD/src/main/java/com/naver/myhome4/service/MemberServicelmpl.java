@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.naver.myhome4.dao.MemberDAO;
@@ -14,18 +15,24 @@ import com.naver.myhome4.domain.Member;
 public class MemberServicelmpl implements MemberService {
 	
 	private MemberDAO dao;
+	private PasswordEncoder passwordEncoder;
 	
 	@Autowired
-	public MemberServicelmpl(MemberDAO dao) {
+	public MemberServicelmpl(MemberDAO dao, PasswordEncoder passwordEncoder) {
 		this.dao = dao;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 	@Override
 	public int isId(String id, String password) {
-		Member rmember = dao.isId(id);
+		Member dbrmember = dao.isId(id);
 		int result = -1; //아이디가 존재하지 않는 경우 - rmember가 null인 경우
-		if(rmember != null) {//아이디가 존재하는 경우
-			if(rmember.getPassword().equals(password)) {
+		if(dbrmember != null) {//아이디가 존재하는 경우
+			//passwordEncoder.matches(rawPassword,encodedPassword)
+			//사용자에게 입력받은 패스워드를 비교하고자 할 때 사용하는 메서드입니다.
+			//rawPassword : 사용자가 입력한 패스워드
+			//encodedPassword : DB패스워드
+			if(passwordEncoder.matches(password,dbrmember.getPassword())) {
 				result=1; //아이디와 비밀번호가 일치하는 경우
 			}else
 				result=0;//아이디는 존재하지만 비밀번호가 일치하지 않는 경우
