@@ -11,6 +11,5 @@ INDEX VERSION 1.131+D:\2023_05_03\sts\.metadata\.plugins\org.eclipse.jdt.core
 223384846.index
 2401722669.index
 852839128.index
-1882405648.index
 1335498620.index
 624664473.index
