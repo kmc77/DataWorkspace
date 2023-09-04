@@ -35,6 +35,10 @@ public interface BoardService {
 	
     //BOARD_RE_SEQ°ª ¼öÁ¤
 	public int boardReplyUpdate(Board board);
+
+	public List<String> getDeleteFileList();
+
+	public void deleteFileList(String filename);
 	
 
 }

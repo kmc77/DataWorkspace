@@ -59,4 +59,12 @@ public class BoardDAO {
 	public int boardDelete(Board board) {
 		return sqlSession.delete("Boards.delete", board);
 	}
+	
+	public List<String> getDeleteFileList() {
+		return sqlSession.selectList("Boards.getDeleteFileList");
+	}
+	
+	public void deleteFileList(String filename) {
+		sqlSession.delete("Boards.deleteFileList", filename);
+	}
 }

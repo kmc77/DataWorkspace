@@ -158,7 +158,15 @@
 			        )
 			     ]]>
 		    </delete>
-
+		    
+		    <select id="getDeleteFileList" resultType="String">
+		    	select board_file from delete_file
+		    </select>
+		    
+		    <delete id="deleteFileList" parameterType="String">
+		    	delete delete_file
+		    	where board_file=#{file_name}
+		    </delete>
 
 		 	 
 </mapper>
