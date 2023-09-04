@@ -3,6 +3,7 @@ package com.naver.myhome4.domain;
 import org.springframework.web.multipart.MultipartFile;
 
 public class Board {
+	private int cnt;
 	private int BOARD_NUM; // 글번호
 	private String BOARD_NAME; // 글 작성자
 	private String BOARD_PASS; // 글 비밀번호
@@ -28,6 +29,14 @@ public class Board {
 
 	private String BOARD_ORIGINAL; // 첨부될 파일의 이름
 	private String BOARD_DATE;
+	
+	  public int getCnt() {
+	        return this.cnt;
+	    }
+
+	    public void setCnt(int cnt) {
+	        this.cnt = cnt;
+	    }
 
 	public int getBOARD_NUM() {
 		return BOARD_NUM;

@@ -93,6 +93,7 @@ if(result == 'deleteSuccess') {
 		
 			<a href="detail?num=${b.BOARD_NUM}">
 			    <c:out value="${b.BOARD_SUBJECT}" escapeXml="true"/>
+			    <c:out value="(${b.cnt})" escapeXml="true"/>
 			</a>
 	  	    </div>
 	  	    

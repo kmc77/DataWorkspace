@@ -2,6 +2,7 @@
 <aop-reference-model>
 <aop-project name="Spring4_MVC_BOARD"/>
 <aop-project name="Spring_DI"/>
+<aop-project name="Spring5_MVC_BOARD"/>
 <aop-project name="Spring1_DI_annotation"/>
 <aop-project name="Spring2_DI_init_destory"/>
 <aop-project name="Spring3_MVC"/>

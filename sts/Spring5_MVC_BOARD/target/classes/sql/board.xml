@@ -32,12 +32,17 @@
 	 	select * from
 	 		(select rownum rnum, b.*
 	 			from
-	 				(select * from board2
-	 					order by BOARD_RE_REF desc,
-	 					BOARD_RE_SEQ asc) b
-	 				where rownum &lt; = #{end}
-	 				)
-	 			where rnum &gt; = #{start} and rnum &lt; = #{end}
+	 				(select board2. *, nvl(cnt, 0) cnt
+	 				from
+	 				board2 left outer join (select board_num, count(*) cnt
+	 										from COMMENTS2
+	 										group by board_num) c
+	 				on board2.board_num = c.board_num
+	 				order by BOARD_RE_REF desc,
+	 				BOARD_RE_SEQ asc ) b
+	 			where rownum &lt;= #{end}
+	 			)
+	 			where rnum &gt;= #{start} and rnum &lt;= #{end}							
 	 </select>
 	 <!-- 
 	 
