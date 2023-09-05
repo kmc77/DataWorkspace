@@ -9,5 +9,6 @@
   <module moduleId="org.eclipse.jst.jee.server:Spring8_BOARD_AOP_Annotation" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring4_MVC_BOARD" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring9" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Spring9_BOARD_transaction" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring_DI" serverId="Tomcat v9.0 Server at localhost"/>
 </modules>

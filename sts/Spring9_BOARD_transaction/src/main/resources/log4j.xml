@@ -10,6 +10,10 @@
 		</layout>
 	</appender>
 	
+	<logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<level value="debug" />
+	</logger>
+	
 	<!-- Application Loggers -->
 	<logger name="com.naver.myhome4">
 		<level value="info" />

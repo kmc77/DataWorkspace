@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.naver.myhome4.dao.BoardDAO;
 import com.naver.myhome4.domain.Board;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -42,12 +43,12 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
+	@Transactional
 	public int boardReply(Board board) {
 		boardReplyUpdate(board);
-		
+		double i = 1/0;
 		board.setBOARD_RE_LEV(board.getBOARD_RE_LEV() + 1);
 		board.setBOARD_RE_SEQ(board.getBOARD_RE_SEQ() + 1);
-		
 		return dao.boardReply(board);
 	}
 	
