@@ -43,6 +43,9 @@
 	    ① 서버에는 브라우저에 데이터를 전송할 떄 CSRF토큰을 같이 전송합니다.
 	    ② 사용자가 POST방식으로 작업할 때 브라우저에서 전송된 CSRF 코튼의 값과 서버가 보관하고 있는 토큰의 값을 비교합니다.
 	    					만일 일치하지 않으면 403오류 발생합니다.
+	    					
+5. post 방식의 모든 품안에 추가합니다.
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">	    					
 	   					
 				
 										  
