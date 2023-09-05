@@ -42,16 +42,20 @@
 	 -->
 	 <task:annotation-driven/>
 	 
-	 <!-- 실습1. -->
-	 	<beans:bean id="beforeAdvice"
-	 				class="com.naver.myhome4.common.BeforeAdvice" />
-	   <aop:config>
-        <aop:pointcut id="allPointcut" expression="execution(* com.naver.myhome4..*Impl.*(..))"/>
-        <aop:pointcut id="getPointcut" expression="execution(* com.naver.myhome4..*Impl.get*(..))"/>
-        
-        <aop:aspect ref="beforeAdvice">
-            <aop:before pointcut-ref="allPointcut" method="beforeLog"/>
-            </aop:aspect>
-     </aop:config>
+	
+     <!--  실습5.
+     	pubic void afterThrowingLog(Throwable exp) {
+     		매개변수의 이름과 throwing="exp"의 속성값 일치 시켜야 합니다.
+ -->
+    <beans:bean id="afterthrowAdvice"
+    		class="com.naver.myhome4.common.AfterThrowingAdvice" />
+    		<aop:config>
+    			<aop:pointcut id="getPointcut"
+    				expression="execution(* com.naver.myhome4..*Impl.get*(..))"/>
+    			<aop:aspect ref="afterthrowAdvice">
+    				<aop:after-throwing pointcut-ref="getPointcut"
+    				 method="afterThrowingLog" throwing="exp" />
+    			</aop:aspect>	
+    		</aop:config>
 	
 </beans:beans>
