@@ -13,6 +13,10 @@
 		<property name="username"           value="scott" />
 		<property name="password"           value="tiger" />
 	</bean>
+	
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+
 
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean"	id="sqlSessionFactory">
 		<property ref="dataSource"      name="dataSource" />
@@ -65,6 +69,10 @@
     	 	</props>
     	 </property>
     	</bean>
+    	
+    	
+    	
+    	
 	
 
 </beans>

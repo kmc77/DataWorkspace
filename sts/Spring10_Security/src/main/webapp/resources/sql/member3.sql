@@ -17,7 +17,7 @@ create table member3(
 
 
 -- 관리자 계정 추가
-INSERT INTO member (id, password)
+INSERT INTO member3 (id, password)
 VALUES ('admin', '1234');
 
 INSERT INTO member (id, password)

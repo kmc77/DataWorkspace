@@ -34,9 +34,7 @@
 		   데이터 베이스에 저장된 비밀번호와 일치하는지를 알려주는 메서드를 가진 클래스입니다.
 		2. PasswordEncoder 인터페이스를 구현한 클래스입니다.   
 	 -->
-	 
-	 <beans:bean id="bcryptPasswordEncoder"
-	 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+	
 	
 	<!-- 주기적인 작업이 있을 때 @Scheduled 애노테이션을 사용하면 쉽게 적용할 수 있습니다.
 		 @Scheduled(fixedDelay=1000)

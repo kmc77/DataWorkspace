@@ -2,9 +2,7 @@
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>/WEB-INF/spring/root-context.xml
-     /WEB-INF/spring/security-context1.xml
-     /WEB-INF/spring/security-context2.xml
-      
+     /WEB-INF/spring/security-context3.xml 
     </param-value>
   </context-param>
   <listener>
@@ -40,7 +38,7 @@
     </filter-mapping>
   
   
-<!--인코딩 필터 뒤에 스프링 시큐리티 필터를 설치합니다.-->
+<!-- 스프링 시큐리티 필터를 설치합니다.-->
     <filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -57,10 +55,11 @@
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>/WEB-INF/spring/appServlet/servlet-context.xml 
-          
       </param-value>
     </init-param>
-   
+    <!-- 404에러의 경우  DispatcherServlet에 의해 처리됩니다.
+         @ControllerAdvice에서 익셉션 처리를 할 수 있도록 아래와 같이 설정합니다.  
+         404에러 페이지로 넘기지 않고, 익셉션을 발생 시키는 설정 -->
     <init-param>
 		<param-name>throwExceptionIfNoHandlerFound</param-name>
 		<param-value>true</param-value>

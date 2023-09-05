@@ -46,7 +46,7 @@
 			<button type="submit" class="submitbtn">로그인</button>
 			<button type="button" class="join">회원가입</button>
 		</div>
-		
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 
 	</form>
 </body>
