@@ -6,7 +6,7 @@
 
 	<select id="count" resultType="int" parameterType="int">
 		select count(*)
-		from comments2
+		from comments3
 		where board_num =#{board_num}
 	</select>
 
@@ -15,7 +15,7 @@
     	from (select rownum rnum, c.*
     		from(
     			select num, id, content, reg_date, board_num
-    			from comments2
+    			from comments3
     			where board_num =#{board_num}
     			order by reg_date desc
     		    )c
@@ -25,18 +25,18 @@
     </select>
     
     <insert id="insert" parameterType="comment">
-    	insert into comments2
+    	insert into comments3
     	values(com_seq.nextval, #{id}, #{content}, sysdate, #{board_num})
     </insert>
 
 	<update id="update" parameterType="comment">
-		UPDATE comments2
+		UPDATE comments3
 		SET content = #{content}
 		WHERE num = #{num}
 	</update>
 
 	<delete id="delete" parameterType="int">
-		delete comments2
+		delete comments3
 		WHERE num = #{num}
 	</delete>
     

@@ -46,6 +46,7 @@
 			<button type="submit" class="submitbtn">로그인</button>
 			<button type="button" class="join">회원가입</button>
 		</div>
+		
 
 	</form>
 </body>

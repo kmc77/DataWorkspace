@@ -10,6 +10,17 @@ public class Member {
 	private int age;
 	private String gender;
 	private String email;
+	private String auth="ROLE_MEMBER";
+	
+	
+
+	public String getAuth() {
+		return auth;
+	}
+
+	public void setAuth(String auth) {
+		this.auth = auth;
+	}
 
 	public String getId() {
 		return id;

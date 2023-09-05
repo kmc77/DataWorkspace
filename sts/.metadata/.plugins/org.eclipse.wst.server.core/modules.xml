@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <modules>
-  <module moduleId="org.eclipse.jst.jee.server:Spring5_MVC_BOARD" serverId="Tomcat v9.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:springTest" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring10_" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring3_MVC_annotation" serverId="Tomcat v9.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:Spring3_MVC" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring7_MVC_AOP" serverId="Tomcat v9.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:Spring7" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring8_BOARD_AOP_Annotation" serverId="Tomcat v9.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:Spring4_MVC_BOARD" serverId="Tomcat v9.0 Server at localhost"/>
-  <module moduleId="org.eclipse.jst.jee.server:Spring9" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Spring10_Security" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring9_BOARD_transaction" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Spring_DI" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Spring5_MVC_BOARD" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:springTest" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Spring3_MVC" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Spring7" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Spring4_MVC_BOARD" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Spring9" serverId="Tomcat v9.0 Server at localhost"/>
 </modules>

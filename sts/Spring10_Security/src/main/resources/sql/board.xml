@@ -6,7 +6,7 @@
 <mapper namespace="Boards">
 
 	<select id = "count" resultType="int">
-		select count(*) from board2
+		select count(*) from board3
 	</select>
 	
 	<!--  문법 오류
@@ -32,12 +32,12 @@
 	 	select * from
 	 		(select rownum rnum, b.*
 	 			from
-	 				(select board2. *, nvl(cnt, 0) cnt
+	 				(select board3. *, nvl(cnt, 0) cnt
 	 				from
-	 				board2 left outer join (select board_num, count(*) cnt
-	 										from COMMENTS2
+	 				board3 left outer join (select board_num, count(*) cnt
+	 										from COMMENTS3
 	 										group by board_num) c
-	 				on board2.board_num = c.board_num
+	 				on board3.board_num = c.board_num
 	 				order by BOARD_RE_REF desc,
 	 				BOARD_RE_SEQ asc ) b
 	 			where rownum &lt;= #{end}
@@ -61,9 +61,9 @@
 	  -->
 	 <insert id="insert" parameterType="board">
 	 	<selectKey resultType="int" order="BEFORE" keyProperty="BOARD_NUM">
-	 		select nvl(max(BOARD_NUM), 0 ) + 1 from board2
+	 		select nvl(max(BOARD_NUM), 0 ) + 1 from board3
 	 	</selectKey>
-	 	insert into board2
+	 	insert into board3
 	 	(BOARD_NUM,
 	 	 BOARD_NAME, BOARD_PASS, BOARD_SUBJECT,
 	 	 BOARD_CONTENT, BOARD_FILE, BOARD_ORIGINAL,
@@ -81,25 +81,25 @@
 	 	 
 	 	 <select id="detail" parameterType="int" resultType="board">
 		    SELECT *
-		    FROM BOARD2
+		    FROM BOARD3
 		    WHERE BOARD_NUM = #{number}
 		 </select>
 		 
 		 <update id="readCountUpdate" parameterType="int">
-		    UPDATE BOARD2
+		    UPDATE BOARD3
 		    SET BOARD_READCOUNT = BOARD_READCOUNT + 1
 		    WHERE BOARD_NUM = #{number}
 		 </update>
 		 
 		 <!--  map은 java,util.Map의 별칭입니다. -->
 		 <select id="boardWriter" parameterType="map" resultType="board">
-		 	  select * from board2
+		 	  select * from board3
 		 	  where BOARD_NUM = #{num}
 		 	  and BOARD_PASS=#{pass}
 	 	 </select>
 		 
 		 <update id="modify" parameterType="board">
-		 	update board2
+		 	update board3
 		 	set
 		 		BOARD_SUBJECT = #{BOARD_SUBJECT},
 		 		BOARD_CONTENT = #{BOARD_CONTENT},
@@ -111,10 +111,10 @@
 		 <!--  BOARD_FILE, BOARD_ORIGINAL 필드 필요없 -->
 		 <insert id="reply_insert" parameterType="board">
 			    <selectKey resultType="int" order="BEFORE" keyProperty="BOARD_NUM">
-			        SELECT MAX(BOARD_NUM) + 1 FROM board2
+			        SELECT MAX(BOARD_NUM) + 1 FROM board3
 			    </selectKey>
 				   <![CDATA[
-				    INSERT INTO BOARD2 (
+				    INSERT INTO BOARD3 (
 				        BOARD_NUM, BOARD_NAME, BOARD_PASS, BOARD_SUBJECT,
 				        BOARD_CONTENT, BOARD_RE_REF,
 				        BOARD_RE_LEV, BOARD_RE_SEQ, BOARD_READCOUNT
@@ -130,7 +130,7 @@
 		  </insert>
 			
 		  <update id="reply_update" parameterType="board">
-			    UPDATE board2
+			    UPDATE board3
 			    SET BOARD_RE_SEQ = BOARD_RE_SEQ + 1
 			    WHERE BOARD_RE_REF = #{BOARD_RE_REF}
 			    AND BOARD_RE_SEQ  <![CDATA[ > ]]> #{BOARD_RE_SEQ}
@@ -141,18 +141,18 @@
 		
 		    <delete id="delete" parameterType="board">
 			    <![CDATA[
-			        DELETE FROM BOARD2
+			        DELETE FROM BOARD3
 			        WHERE BOARD_RE_REF = #{BOARD_RE_REF}
 			        AND BOARD_RE_LEV >= #{BOARD_RE_LEV}
 			        AND BOARD_RE_SEQ >= #{BOARD_RE_SEQ}
 			        AND BOARD_RE_SEQ <= (
 			                nvl	((SELECT MIN(board_re_seq) - 1
-				                FROM BOARD2
+				                FROM BOARD3
 				                WHERE BOARD_RE_REF = #{BOARD_RE_REF}
 				                AND BOARD_RE_LEV = #{BOARD_RE_LEV}
 				                AND BOARD_RE_SEQ > #{BOARD_RE_SEQ}),
 				                (SELECT MAX(board_re_seq)
-				                FROM BOARD2
+				                FROM BOARD3
 				                WHERE BOARD_RE_REF = #{BOARD_RE_REF})
 			            )
 			        )

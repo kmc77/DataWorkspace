@@ -6,16 +6,16 @@
 
    <select id="idcheck" resultType="member" parameterType="String">
       select *
-      from member2 where id = #{id}
+      from member3 where id = #{id}
    </select>
 
    <insert id="insert" parameterType="member">
-      insert into member2
-      values(#{id}, #{password}, #{name}, #{age}, #{gender}, #{email})
+      insert into member3
+      values(#{id}, #{password}, #{name}, #{age}, #{gender}, #{email}, #{auth})
    </insert>
 
    <update id="update" parameterType="member">
-      UPDATE member2
+      UPDATE member3
       set name =
       #{name}, age = #{age}, gender = #{gender}, email = #{email}
       where id =
@@ -25,7 +25,7 @@
    <select id="list" parameterType="java.util.Map" resultType="member">
       select * 
       from (select rownum rnum, m.*
-           from ( SELECT * FROM MEMBER2 WHERE ID != 'admin'
+           from ( SELECT * FROM MEMBER3 WHERE ID != 'admin'
                <include refid="search_"/>
                 order by id
                  ) m
@@ -53,7 +53,7 @@
    </sql>
    
    <delete id="delete" parameterType="String">
-      delete from Member2
+      delete from Member3
       where id = #{id}
    </delete>
    
