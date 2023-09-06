@@ -57,5 +57,11 @@
       where id = #{id}
    </delete>
    
+   <select id="memberinfo" resultType="member" parameterType="String">
+   select *
+   from member3 where id = #{id}
+</select>
+   
+   
 
 </mapper>

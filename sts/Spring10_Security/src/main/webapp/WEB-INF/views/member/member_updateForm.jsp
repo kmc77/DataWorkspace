@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>회원관리 시스템 회원수정 페이지</title>
-<link href="css/join.css"      type="text/css"      rel ="stylesheet">
+<link href="../resources/css/join.css"      type="text/css"      rel ="stylesheet">
 <style>
 
 h3 {
@@ -16,7 +16,7 @@ input[type=file]{
 </head>
 <body>
 <jsp:include page="../board/header.jsp"/>
-<form name="joinform" action="updateProcess"  method="post"    enctype="multipart/form-data">
+<form name="joinform" action="updateProcess"  method="post">
 	<h3>회원 정보 수정</h3>
 	<hr>
 	<b>아이디</b>
@@ -48,6 +48,7 @@ input[type=file]{
 	 <button type="submit" class="submitbtn">수정</button>
 	 <button type="button" class="cancelbtn">취소</button>
 	</div>
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 </form>
 <script>
   //성별 체크해주는 부분

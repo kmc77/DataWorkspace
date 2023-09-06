@@ -1,6 +1,7 @@
 package com.naver.myhome4.controller;
 
 import java.io.PrintWriter;
+import java.security.Principal;
 import java.util.List;
 
 import javax.servlet.http.Cookie;
@@ -178,8 +179,8 @@ public class MemberController2 {
 	
 	//회원 정보 수정폼2
 		@RequestMapping(value = "/update", method = RequestMethod.GET)
-		public ModelAndView member_update(@SessionAttribute(name="id", required=false) String id, 
-				                          ModelAndView mv)  {
+		public ModelAndView member_update(Principal principal, ModelAndView mv) { 
+			String id = principal.getName();
 			
 			if(id==null) {
 				mv.setViewName("redirect:login");
