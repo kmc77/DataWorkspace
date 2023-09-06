@@ -1,4 +1,8 @@
 $(function() {
+
+ let token = $("meta[name='_csrf']").attr("content");
+   let header = $("meta[name='_csrf_header']").attr("content");
+
 	$("#comment table").hide(); //1
 	let page =1; // 더보기에서 보여줄 페이지를 기억할 변수
 	const count = parseInt($("#count").text());
@@ -20,6 +24,10 @@ $(function() {
 						"board_num" : $("#board_num").val(),
 						"page" : currentPage
 						},
+						beforeSend : function(xhr)
+						{
+							xhr.setRequestHeader(header, token);
+						},
 						dataType : "json",
 						success : function(rdata) {
 							$("#count").text(rdata.listcount);
@@ -30,7 +38,7 @@ $(function() {
 								$(rdata.list).each(function() {
 									let output = '';
 									let img = '';
-									if ($("#loginid").val()==this.id) {
+									if ($("#loginid").text()==this.id) {
 										img = "<img src ='../resources/image/pencil2.png' width='15px' class='update'>"
 											+ "<img src = '../resources/image/delete.png' width = '15px' class='remove'>"
 											+ "<input type='hidden' value='"  + this.num + "' >";
@@ -101,7 +109,7 @@ $(function() {
 			url = "../comment/add";
 			data = {
 				"content": content,
-				"id" : $("#loginid").val(),
+				"id" : $("#loginid").text(),
 				"board_num" : $("#board_num").val()
 				};
 				
@@ -119,6 +127,10 @@ $(function() {
 					type : "post",
 					url  : url,
 					data : data,
+						beforeSend : function(xhr)
+						{
+							xhr.setRequestHeader(header, token);
+						},
 					success : function(result) {
 						$("#content").val('');
 						if(result == 1) {
@@ -172,6 +184,10 @@ $(function() {
 				data : {
 					"num" : deleteNum
 				},
+						beforeSend : function(xhr)
+						{
+							xhr.setRequestHeader(header, token);
+						},
 				success : function(result) {
 					if(result == 1) {
 						//page = 1;

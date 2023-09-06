@@ -38,15 +38,24 @@ function setPaging(href, digit){
 }
 
 
-function ajax(sdata){
-   console.log(sdata)
+function ajax(data){
+   console.log(data)
+   let token = $("meta[name='_csrf']").attr("content");
+   let header = $("meta[name='_csrf_header']").attr("content");
+   console.log(token)
+   console.log(header)
    
+   output = "";
    $.ajax({
-      type    : "POST",
-      data    : sdata,
-      url      : "list_ajax",
-      dataType: "json",
-      cache   : false,
+      type       : "POST",
+      data       : data,
+      url         : "list_ajax",
+      dataType    : "json",
+      cache      : false,
+      beforeSend : function(xhr)
+      {      //데이터를 전송하기 전에 헤더에 csrf값을 설정합니다.
+         xhr.setRequestHeader(header, token);
+      },
       success   : function(data){
          $("#viewcount").val(data.limit);
          $("thead").find("span").text("글 개수 : " + data.listcount);
@@ -67,7 +76,7 @@ function ajax(sdata){
                
                let img ="";
                if(item.board_RE_LEV>0){
-                  img="<img src ='image/line.gif'>";
+                  img="<img src ='../resources/image/line.gif'>";
                }
                
                let subject=item.board_SUBJECT;
@@ -77,7 +86,8 @@ function ajax(sdata){
                
                output += "<td><div>" + blank + img
                output += ' <a href ="detail?num='+item.board_NUM+'">'
-               output += subject +'</a></div></td>'
+               output += subject.replace(/</g,'&lt;').replace(/>/g,'&gt;')
+               +'</a></div></td>'
                output +=  "<td><div>" + item.board_NAME+'</div></td>'
                output +=  "<td><div>" + item.board_DATE+'</div></td>'
                output +=  "<td><div>" + item.board_READCOUNT

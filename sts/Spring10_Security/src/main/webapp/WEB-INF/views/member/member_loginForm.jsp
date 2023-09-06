@@ -26,19 +26,12 @@
 		<hr>
 		<b>아이디</b>
 		<input type="text" name="id" placeholder="Enter id" required>
-			<c:if test="${!empty saveid}">
-					value="${saveid }"
-			</c:if>
-
 		<b>Password</b>
-		<input type="password" name="password" placeholder="Enter Password" required>
+		<input type="password" name="password"
+				 placeholder="Enter Password" required>
 		<label>
-		<input type="checkbox"  name="remember" style="margin-bottom: 15px">
-			<c:if test="${!empty saveid }">
-				checked
-			</c:if> Remember me
+		<input type="checkbox"  name="remember-me" style="margin-bottom: 15px"> 로그인 유지하기
 		</label>
-
 		<div class="clearfix">
 			<button type="submit" class="submitbtn">로그인</button>
 			<button type="button" class="join">회원가입</button>

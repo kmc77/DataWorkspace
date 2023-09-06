@@ -22,7 +22,7 @@
       #{id}
    </update>
 
-   <select id="list" parameterType="java.util.Map" resultType="member">
+   <select id="getSearchList" parameterType="java.util.Map" resultType="member">
       select * 
       from (select rownum rnum, m.*
            from ( SELECT * FROM MEMBER3 WHERE ID != 'admin'
@@ -56,11 +56,14 @@
       delete from Member3
       where id = #{id}
    </delete>
-   
-   <select id="memberinfo" resultType="member" parameterType="String">
-   select *
-   from member3 where id = #{id}
-</select>
+
+	<select id="memberinfo" resultType="member"
+		parameterType="String">
+		select *
+		from member3 where id = #{id}
+	</select>
+
+
    
    
 

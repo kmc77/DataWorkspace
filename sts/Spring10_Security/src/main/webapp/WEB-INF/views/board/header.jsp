@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <link href="${pageContext.request.contextPath }/resources/js/bootstarp.js">
   <script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
-
+  
 <meta name="_csrf" content="${_csrf.token}">
 <meta name="_csrf_header" content="${_csrf.headerName}">
 <script>

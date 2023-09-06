@@ -33,13 +33,13 @@
 	 -->
 	 	 <security:http>
 	 	 
-	 <security:intercept-url pattern="/resources/**" 	access="permitAll" />
-	 <security:intercept-url pattern="/member/login" 	access="permitAll" />
-	 <security:intercept-url pattern="/member/join" 	access="permitAll" />
-	 <security:intercept-url pattern="/member/idcheck" 	access="permitAll" />
-	 <security:intercept-url pattern="/member/joinProcess" 	access="permitAll" />
-	 <security:intercept-url pattern="/member/list" 	access="hasRole('ROLE_ADMIN')" />
-	 <security:intercept-url pattern="/**" 				access="hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')" />
+	<security:intercept-url pattern="/resources/**" 	  access="permitAll" />
+		<security:intercept-url pattern="/member/login"        access="permitAll" />
+		<security:intercept-url pattern="/member/join"         access="permitAll" />
+		<security:intercept-url pattern="/member/idcheck"       access="permitAll" />
+		<security:intercept-url pattern="/member/joinProcess"   access="permitAll" />
+		<security:intercept-url pattern="/member/list" 	        access="hasRole('ROLE_ADMIN')"/>
+		<security:intercept-url pattern="/**" 	access="hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')"/>
 	 
 	 
 	 	<security:form-login login-page="/member/login"
@@ -48,8 +48,8 @@
 	 						 password-parameter="password"
 	 						 authentication-failure-handler-ref="loginFailHandler"
 	 						 authentication-success-handler-ref="loginSuccessHandler"
-	 						 
  							/>
+ 							
 	 </security:http>
 	 
 			<security:authentication-manager>

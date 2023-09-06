@@ -26,7 +26,7 @@
     
     <insert id="insert" parameterType="comment">
     	insert into comments3
-    	values(com_seq.nextval, #{id}, #{content}, sysdate, #{board_num})
+    	values(com_seq3.nextval, #{id}, #{content}, sysdate, #{board_num})
     </insert>
 
 	<update id="update" parameterType="comment">

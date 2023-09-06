@@ -71,19 +71,23 @@ public class MemberController2 {
 	 * 상태에서 지정한 이름을 가진 쿠키가 존재하지 않으면 스프링 MVC는 익셉션을 발생시킵니다.
 	 */
 	// http://localhost:8088/myhome4/member/login
-	// 로그인 폼이동
+	
+	//<security:remember-me> 설정 후
+	// 로그인 유지를 위한 쿠키의 값 수정
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(ModelAndView mv, 
-							  @CookieValue(value = "saveid", required = false) Cookie readCookie,
-							  HttpSession session
+							  @CookieValue(value = "remember-me", required = false) Cookie readCookie,
+							  HttpSession session,
+							  Principal userPrincipal
 								) {
 		if (readCookie != null) {
-			mv.addObject("saveid", readCookie.getValue());
-			logger.info("cookie time=" + readCookie.getMaxAge());
+			mv.addObject("저장된 아이디 : " + userPrincipal.getName());
+			mv.setViewName("redirect:/board/list");
+		} else {
+			mv.setViewName("member/member_loginForm");
+			mv.addObject("loginfail", session.getAttribute("loginfail")); //세션에 저장된 값을 한 번만 실행될 수 있도록 mv에 저장합니다.
+			session.removeAttribute("loginfail"); //세션의 값은 제거합니다.
 		}
-		mv.setViewName("member/member_loginForm");
-		mv.addObject("loginfail", session.getAttribute("loginfail")); //세션에 저장된 값을 한 번만 실행될 수 있도록 mv에 저장합니다.
-		session.removeAttribute("loginfail"); //세션의 값은 제거합니다.
 		return mv;
 	}
 

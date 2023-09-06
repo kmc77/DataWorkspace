@@ -150,6 +150,7 @@ if(result == 'deleteSuccess') {
 	</div>
 </c:if><%--<c:if test="${listcount>0}">end --%>
 
+
 <%--게시글이 없는 경우 --%>
 <c:if test="${listcount == 0 }">
 	<h3 style="text-align:center">등록된 글이 없습니다.</h3>
@@ -157,5 +158,6 @@ if(result == 'deleteSuccess') {
 
 <button type="button" class="btn btn-info float-right">글 쓰 기</button>
 </div><%--<div class="container">end --%>
+
 </body>
 </html>
