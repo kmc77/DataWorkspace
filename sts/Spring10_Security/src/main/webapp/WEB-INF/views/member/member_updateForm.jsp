@@ -25,7 +25,7 @@ input[type=file]{
 	
 	<b>비밀번호</b>
 	<input type="password" name="pass"  maxlength=10
-		value="${memberinfo.password}" placeholder="Enter password" readonly>
+		value='${memberinfo.getPassword().substring(0,4)}' placeholder="Enter password" readonly>
 	  
 	<b>이름</b>
 	<input type="text" name="name"  
@@ -67,7 +67,7 @@ input[type=file]{
 				//+는 1회 이상 반복을 의미합니다. {1,}와 동일합니다.
 				//\w+ 는 [A-Za-z0-9_]를 1개이상 사용하라는 의미입니다.
 				const pattern = /^\w+@\w+[.]\w{3}$/;
-				const email = $("input:eq(6)").val();
+				const email = $(this).val();
 				if (!pattern.test(email)) {
 					$("#email_message").css('color', 'red').html("이메일형식이 맞지 않습니다.");
 					checkemail=false;

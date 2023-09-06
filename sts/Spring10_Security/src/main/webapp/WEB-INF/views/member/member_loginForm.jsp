@@ -7,13 +7,10 @@
 <link href="${pageContext.request.contextPath }/resources/css/form.css" type="text/css" rel="stylesheet">
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
 <script>
-	const result = "${result}";
-	if (result === 'joinSuccess') {
+	if ("${result}" == 'joinSuccess') {
 	    alert('회원가입을 축하합니다.');
-	} else if (result === '0') {
-	    alert('비밀번호가 일치하지 않습니다.');
-	} else if (result === '-1') {
-	    alert('아이디가 존재하지 않습니다.');
+	} else if ("${loginfail}" == 'loginFailMsg') {
+	    alert('아이디나 비밀번호 오류 입니다.');
 	}
 	
 	$(function() {
