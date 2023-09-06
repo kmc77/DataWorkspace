@@ -34,10 +34,11 @@
 	 
 	 	 <security:http>
 	 	<security:form-login login-page="/member/login"
-	 						 default-target-url="/board/list"
 	 						 login-processing-url="/member/loginProcess"
 	 						 username-parameter="id"
 	 						 password-parameter="password"
+	 						 authentication-failure-handler-ref="loginFailHandler"
+	 						 authentication-success-handler-ref="loginSuccessHandler"
  							/>
 	 </security:http>
 	 
