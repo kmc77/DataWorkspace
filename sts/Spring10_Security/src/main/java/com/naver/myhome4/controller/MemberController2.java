@@ -73,12 +73,17 @@ public class MemberController2 {
 	// http://localhost:8088/myhome4/member/login
 	// 로그인 폼이동
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView login(ModelAndView mv, @CookieValue(value = "saveid", required = false) Cookie readCookie) {
+	public ModelAndView login(ModelAndView mv, 
+							  @CookieValue(value = "saveid", required = false) Cookie readCookie,
+							  HttpSession session
+								) {
 		if (readCookie != null) {
 			mv.addObject("saveid", readCookie.getValue());
 			logger.info("cookie time=" + readCookie.getMaxAge());
 		}
 		mv.setViewName("member/member_loginForm");
+		mv.addObject("loginfail", session.getAttribute("loginfail")); //세션에 저장된 값을 한 번만 실행될 수 있도록 mv에 저장합니다.
+		session.removeAttribute("loginfail"); //세션의 값은 제거합니다.
 		return mv;
 	}
 
