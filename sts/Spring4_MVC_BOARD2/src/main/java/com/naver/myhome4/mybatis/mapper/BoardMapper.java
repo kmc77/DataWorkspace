@@ -22,5 +22,23 @@ public interface BoardMapper {
 	
 	//글 답변
 	public int boardReply(Board board);
+	
+	//글 수정
+	public int boardModify(Board modifyboard);
+	
+	//글 삭제
+	public int boardDelete(Board board);
+	
+	//조회수 업데이트
+	public int setReadCountUpdate(int num);
+	
+	//글쓴이인지 확인
+	public Board isBoardWriter(HashMap<String, Object> map);
+	
+	//글 등록하기
+	public void insertBoard(Board board);
+	
+	//BOARD_RE_SEQ값 수정
+	public int boardReplyUpdate(Board board);
 
 }
