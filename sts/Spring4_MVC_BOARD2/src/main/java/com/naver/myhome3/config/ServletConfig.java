@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
  					Java 기반 구성을 사용자 정의하기 위한 콜백 메소드를 정의합니다.
  */
 @EnableWebMvc
-@ComponentScan(basePackages= {"com.naver.myhome3"})
+@ComponentScan(basePackages= {"com.naver.myhome4"})
 public class ServletConfig implements WebMvcConfigurer { //기존의 servlet-context.xml에서 설정한 것들을
 	
 	public void configureViewResolvers(ViewResolverRegistry registry) {

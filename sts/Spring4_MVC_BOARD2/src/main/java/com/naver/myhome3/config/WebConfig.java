@@ -44,6 +44,8 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 	}
 
 	//DispatcherServlet이 매핑되기 위한 패스 설정합니다.
+	//애플리케이션 기본 서블릿인 /에만 매핑이 되어 있습니다.
+	//이것은 애플리케이션으로 들어오는 모든 요청을 처리합니다.
 	@Override
 	protected String[] getServletMappings() {
 		return new String[] {"/"};
