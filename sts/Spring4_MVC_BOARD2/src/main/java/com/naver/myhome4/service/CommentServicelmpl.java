@@ -7,16 +7,16 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.naver.myhome4.dao.CommentDAO;
 import com.naver.myhome4.domain.Comment;
+import com.naver.myhome4.mybatis.mapper.CommentMapper;
 
 @Service
 public class CommentServicelmpl implements CommentService {
 
-	private CommentDAO dao;
+	private CommentMapper dao;
 
 	@Autowired
-	public CommentServicelmpl(CommentDAO dao) {
+	public CommentServicelmpl(CommentMapper dao) {
 		this.dao = dao;
 	}
 
@@ -39,7 +39,7 @@ public class CommentServicelmpl implements CommentService {
 
 	@Override
 	public int commentsInsert(Comment c) {
-		return dao.commentsInsert(c);
+		return dao.commentInsert(c);
 	}
 
 	@Override

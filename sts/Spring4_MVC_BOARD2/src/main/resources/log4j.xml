@@ -16,15 +16,15 @@
 	</logger>
 	
 	<!-- Application Loggers -->
-	<logger name="Members">
+	<logger name="com.naver.myhome4.mybatis.mapper.BoardMapper">
 		<level value="trace" />
 	</logger>
 	
-	<logger name="Boards">
+	<logger name="com.naver.myhome4.mybatis.mapper.MemberMapper">
 		<level value="trace" />
 	</logger>
 	
-	<logger name="Comments">
+	<logger name="com.naver.myhome4.mybatis.mapper.CommnetMapper">
 		<level value="trace" />
 	</logger>
 	

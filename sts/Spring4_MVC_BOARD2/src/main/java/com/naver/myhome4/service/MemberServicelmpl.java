@@ -7,16 +7,16 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.naver.myhome4.dao.MemberDAO;
 import com.naver.myhome4.domain.Member;
+import com.naver.myhome4.mybatis.mapper.MemberMapper;
 
 @Service
 public class MemberServicelmpl implements MemberService {
 	
-	private MemberDAO dao;
+	private MemberMapper dao;
 	
 	@Autowired
-	public MemberServicelmpl(MemberDAO dao) {
+	public MemberServicelmpl(MemberMapper dao) {
 		this.dao = dao;
 	}
 

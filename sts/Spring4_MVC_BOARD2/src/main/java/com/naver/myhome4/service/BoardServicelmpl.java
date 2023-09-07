@@ -7,16 +7,16 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.naver.myhome4.dao.BoardDAO;
 import com.naver.myhome4.domain.Board;
+import com.naver.myhome4.mybatis.mapper.BoardMapper;
 
 @Service
 public class BoardServicelmpl implements BoardService {
 
-	private BoardDAO dao;
+	private BoardMapper dao;
 
 	@Autowired
-	public BoardServicelmpl(BoardDAO dao) {
+	public BoardServicelmpl(BoardMapper dao) {
 		this.dao = dao;
 	}
 
@@ -74,7 +74,7 @@ public class BoardServicelmpl implements BoardService {
 
 	@Override
 	public boolean isBoardWriter(int num, String pass) {
-		Map<String,Object> map = new HashMap<String,Object>();
+		HashMap<String, Object> map = new HashMap<String,Object>();
 		map.put("num", num);
 		map.put("pass", pass);
 		Board result = dao.isBoardWriter(map);

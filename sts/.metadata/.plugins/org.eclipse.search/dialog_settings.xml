@@ -34,7 +34,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="new"/>
+			<item key="textPattern" value="MyEnum "/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -49,7 +49,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="nuw"/>
+			<item key="textPattern" value="enum"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -61,7 +61,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="num"/>
+			<item key="textPattern" value="alr"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -73,7 +73,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="50"/>
+			<item key="textPattern" value="arl"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -85,7 +85,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="댓글이 "/>
+			<item key="textPattern" value="server"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -97,7 +97,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="등록된"/>
+			<item key="textPattern" value="Context"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -109,7 +109,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="등록"/>
+			<item key="textPattern" value="server.xml"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -121,7 +121,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="memberDelete"/>
+			<item key="textPattern" value="bean"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -133,7 +133,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="memberInfo.net"/>
+			<item key="textPattern" value="bean "/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -145,7 +145,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="board_write"/>
+			<item key="textPattern" value="hid"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -157,7 +157,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="board_board_write"/>
+			<item key="textPattern" value="new"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -169,7 +169,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="joinProcess"/>
+			<item key="textPattern" value="nuw"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.jsp"/>
@@ -200,5 +200,7 @@
 	</section>
 	<section name="">
 		<item key="org.eclipse.search.resultpage.limit" value="1000"/>
+		<item key="org.eclipse.jdt.search.resultpage.limit" value="1000"/>
+		<item key="org.eclipse.jdt.search.resultpage.limit_enabled" value="TRUE"/>
 	</section>
 </section>
