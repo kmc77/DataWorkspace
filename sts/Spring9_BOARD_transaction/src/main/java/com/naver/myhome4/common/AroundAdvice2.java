@@ -13,8 +13,8 @@ import org.springframework.util.StopWatch;
 
 //Advice : 횡단 관심에 해당하는 공통 기능의 의미하며 독립된 클래스의 메서드로 작성됩니다.
 //Around Advice : 비즈니스 메서드 실행 전이나 실행 후에 수행되는 Advice 입니다.
-//@Service
-//@Aspect //@Aspect가 설정된 
+@Service
+@Aspect //@Aspect가 설정된 
 public class AroundAdvice2 {
 	private static final Logger logger = LoggerFactory.getLogger(AroundAdvice2.class);
 

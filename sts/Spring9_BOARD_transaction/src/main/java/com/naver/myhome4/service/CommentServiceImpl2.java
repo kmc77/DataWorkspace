@@ -7,7 +7,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.naver.myhome4.aop.LogAdvice;
 import com.naver.myhome4.dao.CommentDAO;
 import com.naver.myhome4.domain.Comment;
 
@@ -15,24 +14,20 @@ import com.naver.myhome4.domain.Comment;
 public class CommentServiceImpl2 implements CommentService {
 
 	private CommentDAO dao;
-	private LogAdvice log;
 	
 
 	@Autowired
-	public CommentServiceImpl2(CommentDAO dao, LogAdvice log) {
+	public CommentServiceImpl2(CommentDAO dao) {
 		this.dao = dao;
-		this.log = log;
 	}
 
 	@Override
 	public int getListCount(int board_num) {
-		log.beforeLog();
 		return dao.getListCount(board_num);
 	}
 
 	@Override
 	public List<Comment> getCommentList(int board_num, int page) {
-		log.beforeLog();
 		int startrow = 1;
 		int endrow = page * 3;
 		
