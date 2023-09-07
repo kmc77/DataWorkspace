@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Comments">
+<mapper namespace="com.naver.myhome4.mybatis.mapper.CommentMapper">
 
-	<select id="count" resultType="int" parameterType="int">
+	<select id="getListCount" resultType="int" parameterType="int">
 		select count(*)
 		from comments
 		where board_num =#{board_num}
 	</select>
 
-    <select id ="list" resultType="comment" parameterType="map">
+    <select id ="getCommentList" resultType="comment" parameterType="map">
     	select *
     	from (select rownum rnum, c.*
     		from(
@@ -24,18 +24,18 @@
     	where rnum between #{start} and #{end}
     </select>
     
-    <insert id="insert" parameterType="comment">
+    <insert id="commentInsert" parameterType="comment">
     	insert into comments
     	values(com_seq.nextval, #{id}, #{content}, sysdate, #{board_num})
     </insert>
 
-	<update id="update" parameterType="comment">
+	<update id="commentsUpdate" parameterType="comment">
 		UPDATE comments
 		SET content = #{content}
 		WHERE num = #{num}
 	</update>
 
-	<delete id="delete" parameterType="int">
+	<delete id="commentsDelete" parameterType="int">
 		delete comments
 		WHERE num = #{num}
 	</delete>
