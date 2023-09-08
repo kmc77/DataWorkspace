@@ -3,8 +3,10 @@ package com.naver.myhome4.mybatis.mapper;
 import java.util.List;
 import java.util.Map;
 
-import com.naver.myhome4.domain.Member;
+import org.apache.ibatis.annotations.Mapper;
 
+import com.naver.myhome4.domain.Member;
+@Mapper
 public interface MemberMapper {
 	
 	public Member isId(String id);
