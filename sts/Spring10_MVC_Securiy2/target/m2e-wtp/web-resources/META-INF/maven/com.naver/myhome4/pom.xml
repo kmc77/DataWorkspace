@@ -5,10 +5,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.naver</groupId>
 	<artifactId>myhome4</artifactId>
-	<name>Spring9_MVC_AOP2</name>
+	<name>Spring10_MVC_AOP2</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
-	
 	<properties>
 		<java-version>1.11</java-version>
 		<org.springframework-version>5.1.13.RELEASE</org.springframework-version>
@@ -18,7 +17,8 @@
 
 	<dependencies>
 	
-	<dependency>
+	<!-- 추가되는 부분 -->
+		<dependency>
 		   <groupId>org.aspectj</groupId>
 		   <artifactId>aspectjweaver</artifactId>
 			<version>1.8.8</version>
@@ -61,24 +61,31 @@
 		</dependency>
 
 
-		<!-- 스프링 시큐리티 web 라이브러리 -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
-		<!-- 스프링 시큐리티 core 라이브러리 -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
-		<!-- 스프링 시큐리티 config 라이브러리 -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
+	<!-- 스프링 시큐리티 web 라이브러리 -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-web</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency>
+	<!-- 스프링 시큐리티 core 라이브러리 -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-core</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency>
+	<!-- 스프링 시큐리티 config 라이브러리 -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-config</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency>
+
+	<!-- 스프링 시큐리티 tag 라이브러리 -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-taglibs</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency>
 
 		<!-- json -->
 		<dependency>
@@ -274,15 +281,18 @@
 					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
-			
-			 <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-		</plugin>
+
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-war-plugin</artifactId>
+		<version>2.4</version>
+		<configuration>
+			<warSourceDirectory>src/main/webapp</warSourceDirectory>
+			<warName>sample</warName>
+
+			<failOnMissingWebXml>false</failOnMissingWebXml>
+		</configuration>
+	</plugin>
 		</plugins>
 	</build>
 </project>

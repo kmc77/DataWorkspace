@@ -1,9 +1,7 @@
 package com.naver.myhome4.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
@@ -34,9 +32,6 @@ public class ServletConfig implements WebMvcConfigurer{  //기존의 servlet-contex
       registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
    }
    
-   @Bean
-   public BCryptPasswordEncoder getPasswordEncoder() {
-	   BCryptPasswordEncoder bpe = new BCryptPasswordEncoder();
-	   return bpe;
-   }
+   //public BCryptPasswordEncoder getPasswordEncoder() { 제거합니다.
+  
 }

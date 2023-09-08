@@ -47,7 +47,7 @@ img {
 			</div>
 			<div class="form-group">
 				<label for="board_content">내용</label>
-				<textarea name="BOARD_CONTENT" id="board_content" rows="10" class="form-control"></textarea>
+				<textarea name="BOARD_CONTENT" id="textarea" rows="10" class="form-control"></textarea>
 			</div>
 			<div class="form-group">
 				<label>파일 첨부 
@@ -59,6 +59,7 @@ img {
 				<button type=submit class="btn btn-primary">등록</button>
 				<button type=reset class="btn btn-danger">취소</button>
 			</div>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 		</form>
 	</div>
 

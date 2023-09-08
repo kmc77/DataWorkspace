@@ -112,7 +112,7 @@ $(function() {
 			<button type="submit" class="submitbtn">회원가입</button>
 			<button type="reset" class="cancelbtn">다시작성</button>
 		</div>
-
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 	</form>
 </body>
 </html>

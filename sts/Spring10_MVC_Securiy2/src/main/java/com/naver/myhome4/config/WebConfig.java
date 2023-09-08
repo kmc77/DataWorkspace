@@ -1,12 +1,11 @@
 package com.naver.myhome4.config;
 
-import javax.servlet.Filter;
 import javax.servlet.ServletRegistration.Dynamic;
 
-import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 /*
  * AbstractAnnotationConfigDispatcherServletInitializer를 상속받은 클래스로
+ * DispatcherServlet과 애플리케이션의 서블릿 컨텍스트내의 스프링 애플리케이션 컨텍스트를 설정한다는 의미입니다.
  * 내부적으로 AbstractAnnotationConfigDispatcherServletInitializer는
  * DispatcherServlet과 ContextLoaderListener를 생성합니다.
  * 
@@ -17,13 +16,14 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 //web.xml 역할
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer{
    
-   //파라미터 인코딩 필터 설정(한글 설정)
-   protected Filter[] getServletFilters() {
-      CharacterEncodingFilter filter = new CharacterEncodingFilter();
-      filter.setEncoding("UTF-8");
-      filter.setForceEncoding(true);
-      return new Filter[] {filter};
-   }
+	//CharacterEncodingFilter 제거합니다.
+	
+	/*
+	 ContextLoaderListener가 생성한 애플리케이션 컨텍스트를 설정하는 데 사용됩니다.
+	 Class<?>[]
+	 <?> 제네릭을 사용하는 
+	 */
+   
    
    /*
     * ContextLoaderListener가 생성한 애플리케이션 컨텍스트를 설정하는 데 사용됩니다.
@@ -32,7 +32,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     */
    
    protected Class<?>[] getRootConfigClasses() { // 기존의 root-context.xml 대신 사용
-      return new Class[] {RootConfig.class};
+      return new Class[] {RootConfig.class, Security_Config.class};
    }
    
    //DispatcherServlet이 애플리케이션 컨텍스트를 ServletConfig 설정 클래스(java 설정)에서 정의된 빈으로 로딩하도록 되어 있습니다.
