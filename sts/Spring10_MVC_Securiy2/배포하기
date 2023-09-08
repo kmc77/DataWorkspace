@@ -1,0 +1,27 @@
+1. 프로젝트 빌드하기 
+   
+   프로젝트에서 Run As 
+-> Maven build...
+
+-> Goals : package
+          
+   체크박스 중 Skip Tests 선택
+          
+-> Run 
+
+c
+[INFO] BUILD SUCCESS
+
+2. target 폴더를 클릭
+    myhome4-1.0.0-BUILD-SNAPSHOT.war 생성 확인
+    
+        
+    <groupId>com.naver</groupId>
+	<artifactId>myhome4</artifactId>
+	<name>Spring10_MVC_Security</name>
+	<packaging>war</packaging>
+	<version>1.0.0-BUILD-SNAPSHOT</version>
+	
+	pom.xml에서 설정한 artifactId + "-" +  version + ".war" 이름으로 생성
+	
+	
