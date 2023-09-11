@@ -40,23 +40,24 @@ body>div>table>thead>tr:nth-child(2)>th:nth-child(5) {
    width: 11%
 }
 </style>
+<script src="../resources/js/list.js"></script>
+<title>MVC 게시판</title>
 <script>
 	const result = "${result}";
-	if(result == 'deleteSuccess'){
+	if(result == 'deleteSuccess') {
 		alert("삭제 성공 입니다.")
-	}else if(result == 'updateSuccess'){
+	} else if ( result == 'updateSuccess') {
 		alert("회원 정보가 수정되었습니다.")
 	}
 </script>
-<script src="../resources/js/list.js"></script>
-<title>MVC 게시판</title>
 </head>
 <body>
    <div class="container">
       <%-- 게시글이 있는 경우 --%>
       <c:if test="${listcount > 0 }">
          <div class="rows">
-            <span>줄보기</span> <select class="form-control" id="viewcount">
+            <span>줄보기</span> 
+            <select class="form-control" id="viewcount">
                <option value="1">1</option>
                <option value="3">3</option>
                <option value="5">5</option>
@@ -82,17 +83,17 @@ body>div>table>thead>tr:nth-child(2)>th:nth-child(5) {
                <c:set var="num" value="${listcount - (page - 1) * limit}" />
                <c:forEach var="b" items="${boardlist}">
                   <tr>
-                     <td>
-                        <%-- 번호 --%> <c:out value="${num}" /> <%-- num 출력 --%> <c:set
-                           var="num" value="${num-1}" /> <%-- num=num-1; 의미 --%>
+                     <td> <%-- 번호 --%> 
+                     	<c:out value="${num}" /> <%-- num 출력 --%> 
+                        <c:set var="num" value="${num-1}" /> <%-- num=num-1; 의미 --%>
                      </td>
                      <td>
                         <%-- 제목 --%>
                         <div>
                            <%-- 답변글 제목앞에 여백 처리 부분
-                                 board_re_lev, board_num,
-                                  board_subject, board_name, board_date,
-                                  board_readcount : property 이름 --%>
+                                 BOARD_RE_LEV,	BOARD_NUM
+                                 BOARD_SUBJECT,	BOARD_NAME,	BOARD_DATE,
+                                 BOARD_READCOUNT : property 이름 --%>
                            <c:if test="${b.BOARD_RE_LEV != 0 }">
                               <%-- 답글인 경우 --%>
                               <c:forEach var="a" begin="0" end="${b.BOARD_RE_LEV*2}" step="1">
@@ -113,7 +114,7 @@ body>div>table>thead>tr:nth-child(2)>th:nth-child(5) {
                            <c:if test="${b.BOARD_SUBJECT.length()<20}">
                                  <c:out value="${b.BOARD_SUBJECT}" />
                            </c:if>
-                           </a>[${b.CNT }]
+                           </a>
                         </div>
                      </td>
                      <td><div>${b.BOARD_NAME}</div></td>
@@ -127,33 +128,36 @@ body>div>table>thead>tr:nth-child(2)>th:nth-child(5) {
          <div class="center-block">
             <ul class="pagination justify-content-center">
                <c:if test="${page <= 1 }">
-                  <li class="page-item"><a class="page-link gray">이전&nbsp;</a>
+                  <li class="page-item">
+                  <a class="page-link gray">이전&nbsp;</a>
                   </li>
                </c:if>
 
                <c:if test="${page > 1 }">
-                  <li class="page-item"><a href="list?page=${page-1}"
-                     class="page-link">이전&nbsp;</a></li>
+                  <li class="page-item">
+                  <a href="list?page=${page-1}" class="page-link">이전&nbsp;</a></li>
                </c:if>
 
                <c:forEach var="a" begin="${startpage}" end="${endpage}">
                   <c:if test="${a == page }">
-                     <li class="page-item active"><a class="page-link">${a}</a></li>
+                     <li class="page-item active">
+                     <a class="page-link">${a}</a></li>
                   </c:if>
 
                   <c:if test="${a != page }">
-                     <li class="page-item"><a href="list?page=${a}"
-                        class="page-link">${a}</a></li>
+                     <li class="page-item">
+                     <a href="list?page=${a}" class="page-link">${a}</a></li>
                   </c:if>
                </c:forEach>
 
                <c:if test="${page >= maxpage }">
-                  <li class="page-item"><a class="page-link gray">&nbsp;다음</a>
+                  <li class="page-item">
+                  <a class="page-link gray">&nbsp;다음</a>
                   </li>
                </c:if>
                <c:if test="${page < maxpage }">
-                  <li class="page-item"><a href="list?page=${page+1}"
-                     class="page-link">&nbsp;다음</a></li>
+                  <li class="page-item">
+                  <a href="list?page=${page+1}"  class="page-link">&nbsp;다음</a></li>
                </c:if>
             </ul>
          </div>

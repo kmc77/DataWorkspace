@@ -30,10 +30,10 @@
     }
 </style>
 
-<c:if test="${empty id }">
-	<script>
-		location.href = "${pageContext.request.contextPath}/resources/member/loign";
-	</script>
+<c:if test="${empty id}">
+    <script>
+        location.href = "${pageContext.request.contextPath}/member/login";
+    </script>
 </c:if>
 
 <nav class="navbar navbar-expand-sm right-block navbar-dark">
@@ -47,7 +47,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> 관리자 </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="${pageContext.request.contextPath}/member/list">회원정보</a>
+                        <a class="dropdown-item" href="${pageContext.request.contextPath}/member/memberList">회원정보</a>
                         <a class="dropdown-item" href="${pageContext.request.contextPath}/board/list">게시판</a>
                     </div>
                 </li>

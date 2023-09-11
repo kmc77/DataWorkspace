@@ -1,14 +1,14 @@
 drop table member cascade constraints purge;
---1. index.jspì—ì„œ ì‹œì‘í•©ë‹ˆë‹¤.
---2. ê´€ë¦¬ì ê³„ì • admin, ë¹„ë²ˆ 1234ë¥¼ ë§Œë“­ë‹ˆë‹¤.
---3. ì‚¬ìš©ì ê³„ì •ì„ 3ê°œ ë§Œë“­ë‹ˆë‹¤.
+--1. index.jsp¿¡¼­ ½ÃÀÛÇÕ´Ï´Ù.
+--2. °ü¸®ÀÚ °èÁ¤ admin, ºñ¹ø 1234¸¦ ¸¸µì´Ï´Ù.
+--3. »ç¿ëÀÚ °èÁ¤À» 3°³ ¸¸µì´Ï´Ù.
 
 create table member(
-	id			VARCHAR2(12),
-	password		VARCHAR2(10),
-	name			VARCHAR2(15),	--í•œê¸€ 5ê¸€ìê¹Œì§€ ê°€ëŠ¥
-	age			NUMBER(2),
-	gender			VARCHAR2(3),
-	email			VARCHAR2(30),
-	PRIMARY KEY(id)
+   id         VARCHAR2(12),
+   password      VARCHAR2(10),
+   name         VARCHAR2(15),   --ÇÑ±Û 5±ÛÀÚ±îÁö °¡´É
+   age         NUMBER(2),
+   gender         VARCHAR2(3),
+   email         VARCHAR2(30),
+   PRIMARY KEY(id)
 );

@@ -89,102 +89,101 @@ $(function() {
    //버튼의 라벨이 '등록'인 경우는 댓글을 추가하는 경우
    //버튼의 라벨이 '수정완료'인 경우는 댓글을 수정하는 경우
    $("#write").click(function(){
-   	const content = $("#content").val().trim();
-   	if(!content){
-   		alert('내용을 입력하세요');
-   		return false;
-   	}
-   	const buttonText = $("#write").text();	// 버튼의 라벨로 add할지 update할지 결정
-   	
-   	$('.float-left').text('총 50자까지 가능합니다.');
-   	
-   	
-   	if(buttonText == '등록') { // 댓글을 추가하는 경우
-   		url = "../comment/add";
-   		data = {
-   			"content" : content,
-   			"id" : $("#loginid").val(),
-   			"board_num" : $("#board_num").val()
-   		};
-   	} else { // 댓글을 수정하는 경우
-   		url = "../comment/update";
-   		data = {
-   			"num" : num,
-   			"content" : content
-   		};
-   		$("#write").text("등록"); // 다시 등록으로 변경
-   		$("#comment .cancel").remove(); // 취소 버튼 삭제
-   	}
-   	$.ajax({
-   		type : "post",
-   		url : url,
-   		data : data,
-   		success : function(result){
-   			$("#content").val('');
-   			if(result == 1){
-   				//page = 1
-   				getList(page); // 등록, 수정완료 후 해당 페이지 보여줍니다.
-   			}//if
-   		}//success
-   	})//ajax and
+      const content = $("#content").val().trim();
+      if(!content){
+         alert('내용을 입력하세요');
+         return false;
+      }
+      const buttonText = $("#write").text();   // 버튼의 라벨로 add할지 update할지 결정
+      
+      $('.float-left').text('총 50자까지 가능합니다.');
+      
+      
+      if(buttonText == '등록') { // 댓글을 추가하는 경우
+         url = "../comment/add";
+         data = {
+            "content" : content,
+            "id" : $("#loginid").val(),
+            "board_num" : $("#board_num").val()
+         };
+      } else { // 댓글을 수정하는 경우
+         url = "../comment/update";
+         data = {
+            "num" : num,
+            "content" : content
+         };
+         $("#write").text("등록"); // 다시 등록으로 변경
+         $("#comment .cancel").remove(); // 취소 버튼 삭제
+      }
+      $.ajax({
+         type : "post",
+         url : url,
+         data : data,
+         success : function(result){
+            $("#content").val('');
+            if(result == 1){
+               //page = 1
+               getList(page); // 등록, 수정완료 후 해당 페이지 보여줍니다.
+            }//if
+         }//success
+      })//ajax and
   })// $("#write") end
 
-	$("#comment").on('click', '.update', function() {
-		const before = $(this).parent().prev().text();	// 선택한 내용을 가져옵니다.
-		$("#content").focus().val(before);				// textarea에 수정전 내용을 보여줍니다.	
-		num = $(this).next().next().val()				// 수정할 댓글번호를 저장합니다.
-		$("#write").text("수정완료");						// 등록버튼의 라벨을 '수정완료'로 변경합니다.
-		
-		//이미 취소 버튼이 만들어진 상태에서 또 수정을 클릭하면 취소가 계속 추가됩니다.
-		if(!$("#write").prev().is(".cancel"))
-			$("#write").before('<button class="btn btn-danger float-right cancel">취소</button>');
-			
-		//모든 행의 배경색을 'white'로 지정합니다.
-		$("#comment tr").css('background-color', 'white');
-		
-		//선택한 행의 배경색을 'lightgray'로 지정합니다.
-		$(this).parent().parent().css('background-color', 'lightgray'); // 수정할 행의 배경색을 변경합니다.
-		$(".remove").prop("disabled",true); // [수정완료][취소] 중에는 삭제를 클릭할 수 없도록 합니다.
-		
-	});
+   $("#comment").on('click', '.update', function() {
+      const before = $(this).parent().prev().text();   // 선택한 내용을 가져옵니다.
+      $("#content").focus().val(before);            // textarea에 수정전 내용을 보여줍니다.   
+      num = $(this).next().next().val()            // 수정할 댓글번호를 저장합니다.
+      $("#write").text("수정완료");                  // 등록버튼의 라벨을 '수정완료'로 변경합니다.
+      
+      //이미 취소 버튼이 만들어진 상태에서 또 수정을 클릭하면 취소가 계속 추가됩니다.
+      if(!$("#write").prev().is(".cancel"))
+         $("#write").before('<button class="btn btn-danger float-right cancel">취소</button>');
+         
+      //모든 행의 배경색을 'white'로 지정합니다.
+      $("#comment tr").css('background-color', 'white');
+      
+      //선택한 행의 배경색을 'lightgray'로 지정합니다.
+      $(this).parent().parent().css('background-color', 'lightgray'); // 수정할 행의 배경색을 변경합니다.
+      $(".remove").prop("disabled",true); // [수정완료][취소] 중에는 삭제를 클릭할 수 없도록 합니다.
+      
+   });
 
-	// 취소 버튼 클릭 시 이벤트 처리
-	$("#comment").on('click', '.cancel', function() {
-		$("#comment tr").removeAttr('style');			//<tr style="background-color : white;">
-														//<tr style="background-color : lightgray;">
-														// style 속성을 제거 합니다.
-														
-       	$(this).remove();  								// 선택한 취소 버튼을 제거합니다.
-       	$("#write").text("등록");  						// $("#write")의 "수정완료" 라벨을 "등록"으로 변경합니다.
-       	$("#content").val('');  						// $("#content")의 값을 초기화 합니다.
-       	$(".remove").prop("disabled", false);			// 삭제 할 수 있도록 합니다.
-       	$(".float-left").text('총 50자까지 가능합니다.');
-	});
-	
-	
-	//delete.png를 클릭하는 경우
-	$("#comment").on('click', '.remove', function() {
-    if (!confirm('정말 삭제하시겠습니까?')) {
-			return;
+   // 취소 버튼 클릭 시 이벤트 처리
+   $("#comment").on('click', '.cancel', function() {
+      $("#comment tr").removeAttr('style');         //<tr style="background-color : white;">
+                                          //<tr style="background-color : lightgray;">
+                                          // style 속성을 제거 합니다.
+                                          
+          $(this).remove();                          // 선택한 취소 버튼을 제거합니다.
+          $("#write").text("등록");                    // $("#write")의 "수정완료" 라벨을 "등록"으로 변경합니다.
+          $("#content").val('');                    // $("#content")의 값을 초기화 합니다.
+          $(".remove").prop("disabled", false);         // 삭제 할 수 있도록 합니다.
+          $(".float-left").text('총 50자까지 가능합니다.');
+   });
+   
+   
+   
+    $(document).on("click", ".remove", function() {
+        if (confirm("정말 삭제하시겠습니까?")) {
+            const num = parseInt($(this).closest("tr").find("input[type='hidden']").val());
+            
+            $.ajax({
+                type: "post",
+                url: "../comment/delete",
+                data: {
+                    "num": num
+                },
+                success: function(result) {
+                    if (result == 1) {
+                        alert("삭제되었습니다.");
+                        getList(page);
+                    } else {
+                        alert("삭제 실패");
+                    }
+                }
+            });
         }
-        const deleteNum = $(this).next().val(); 		// 댓글번호
-		$.ajax({
-   			type : "post",
-   			url : "../comment/delete",
-   			data : {
-   				"num" : deleteNum
-   			},
-   			success : function(result){
-   				if(result == 1){
-   					alert("삭제 되었습니다.");
-   					///page = 1;
-   					getList(page);						// 삭제 후 해당 페이지의 내용을 보여줍니다.
-   				}
-   			}
-		})
-	})
-	
-
+    });
 
 }); //ready end
  

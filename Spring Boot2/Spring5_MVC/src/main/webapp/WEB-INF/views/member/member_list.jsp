@@ -57,7 +57,7 @@
  					return false;
  				}
  			} else if (selectedValue === '3') {
- 				if(search_word != "남" && search_word != "여"); {
+ 				if(word != "남" && word != "여"); {
  					alert("남 또는 여를 입력하세요");
  					$input.val('').focus();
  					return false;
@@ -133,7 +133,7 @@ td:nth-child(1) {
 </head>
 <body>
    <div class="container">
-      <form action="list">
+      <form action="memberList">
          <div class="input-group">
             <select id="viewcount" name="search_field">
                <option value="0" selected>아이디</option>
@@ -164,7 +164,7 @@ td:nth-child(1) {
             <tbody>
                <c:forEach var="m" items="${memberlist}">
                   <tr>
-                     <td><a href="info?id=${m.id}">${m.id}</a></td>
+                     <td><a href="info?id=${m.id}" name = "userId">${m.id}</a></td>
                      <td>${m.name}</td>
                      <td><a href="delete?id=${m.id}">삭제</a></td>
                   </tr>
@@ -180,7 +180,7 @@ td:nth-child(1) {
                </c:if>
                <c:if test="${page > 1 }">         
                     <li class="page-item">
-       <a href="list?page=${page-1}&search_field=${search_field}&search_word=${search_word}" 
+       <a href="memberList?page=${page-1}&search_field=${search_field}&search_word=${search_word}" 
                     class="page-link">이전</a>&nbsp;
                    </li> 
                </c:if>
@@ -192,7 +192,7 @@ td:nth-child(1) {
                      </li>
                   </c:if>
                   <c:if test="${a != page }">
-                     <c:url var="go" value="list">
+                     <c:url var="go" value="memberList.net">
                         <c:param name="search_field" value="${search_field}" />
                         <c:param name="search_word"  value="${search_word}" />
                         <c:param name="page"         value="${a}" />
@@ -209,7 +209,7 @@ td:nth-child(1) {
                   </li>
                </c:if>
                <c:if test="${page < maxpage }">
-                  <c:url var="next" value="list">
+                  <c:url var="next" value="memberList">
                      <c:param name="search_field" value="${search_field}" />
                      <c:param name="search_word"  value="${search_word}" />
                      <c:param name="page"         value="${page+1}" />

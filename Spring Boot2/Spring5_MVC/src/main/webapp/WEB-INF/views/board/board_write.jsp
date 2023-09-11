@@ -3,7 +3,7 @@
 <head>
 <title>글쓰기</title>
 	<jsp:include page="header.jsp" />
-	<script src="../resources/js/writeform.js" charset="utf-8"></script>
+	<script src="../resource/js/writeform.js"></script>
 	<style>
 		h1{font-size: 1.5rem; text-align: center; color:#1a92b9;}
 		.container{width: 60%;}
@@ -30,12 +30,12 @@
 			</div>
 			<div class="form-group">
 				<label for="board_content">내용</label>
-				<textarea name="BOARD_CONTENT" id="board_content" cols="67" rows="10" class="form-control"></textarea>
+				<textarea name="BOARD_CONTENT" id="board_content" rows="10" class="form-control"></textarea>
 			</div>
 			<div class="form-group">
 				<label>
 					파일첨부
-					<img src="../resources/image/attach.png" alt="파일첨부">
+					<img src="../resource/image/attach.png" alt="파일첨부">
 					<input type="file" id="upfile" name="uploadfile">
 				</label>
 				<span id="filevalue"></span>

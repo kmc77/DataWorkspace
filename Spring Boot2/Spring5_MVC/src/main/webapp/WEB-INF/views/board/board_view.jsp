@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="../resources/js/view.js"></script>
-   <script>   
+   <script>
       let result="${result}";
       if(result == 'passFail'){
          alert("비밀번호가 일치하지 않습니다.")
@@ -22,9 +22,7 @@
             }
          })
       })
-   	
-
-       
+   
    </script>
    <style>
 body > div > table > tbody >tr:nth-child(1) {

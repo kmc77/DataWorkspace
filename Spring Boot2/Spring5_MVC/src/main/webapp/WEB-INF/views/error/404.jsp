@@ -2,18 +2,17 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link href="${pageContext.request.contextPath}/resources/css/rain.css" type="text/css" rel ="stylesheet">
 <head>
-	<title>404 오류</title>
-	<style>
-		div{text-align:center}
-	</style>
+<title>404 오류</title>
+<style>
+	div{text-align : center}
+</style>
 </head>
 <body>
-	<div>
+<div>
 	${exception }<br>
-	<img src="${pageContext.request.contextPath }/resources/image/404.png" width="300px"><br>
+	<img src="${pageContext.request.contextPath}/resources/image/404.png" width="300px"><br>
 	요청하신 <b>${url }</b>이 존재하지 않습니다.
-	</div>
+</div>
 </body>
 </html>

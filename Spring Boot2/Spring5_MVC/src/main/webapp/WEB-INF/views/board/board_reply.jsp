@@ -22,7 +22,7 @@ label {
 </head>
 <body>
    <div class="container">
-      <form action="replyAction" method="post" name="boardform">
+      <form action="replyAction" method="post" name="replyform">
          <input type="hidden" name="BOARD_RE_REF" value="${boarddata.BOARD_RE_REF}">
          <input type="hidden" name="BOARD_RE_LEV" value="${boarddata.BOARD_RE_LEV}">
          <input type="hidden" name="BOARD_RE_SEQ" value="${boarddata.BOARD_RE_SEQ}">
@@ -34,13 +34,13 @@ label {
          </div>
          <div class="form-group">
             <label for="board_subject">제목</label> 
-            <textarea name="BOARD_SUBJECT" id="board_subject" rows="1"
+            <textarea name="BOARD_SUBJECT" id="BOARD_SUBJECT" rows="1"
              maxlength="100" class="form-control">Re:${boarddata.BOARD_SUBJECT}</textarea>
          </div>
          <div class="form-group">
             <label for="board_content">내용</label> 
             <textarea name="BOARD_CONTENT" id="board_content" 
-                  rows="15" class="form-control" ></textarea>
+                  rows="10" class="form-control" ></textarea>
          </div>
          <div class="form-group">
             <label for="board_pass">비밀번호</label> 
