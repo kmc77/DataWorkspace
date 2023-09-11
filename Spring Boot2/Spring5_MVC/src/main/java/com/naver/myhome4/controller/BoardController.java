@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -38,6 +39,9 @@ public class BoardController {
 
    private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
+   @Value("${my.savefolder}")
+   private String saveFolder;
+   
    private BoardService boardService;
 
    private CommentService commentService;
