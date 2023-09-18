@@ -26,7 +26,7 @@
 		</a>
 		<ul id="right_btns">
 			<li id="search" style="margin-bottom: 24px;"><a id="search_btn"
-				onclick="location.href='${pageContext.request.contextPath}/search'">
+				onclick="location.href='${pageContext.request.contextPath}/main/search'">
 					<img
 					src="${pageContext.request.contextPath}/resources/image/common/search.png"
 					style="width: 30px; height: auto;">

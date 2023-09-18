@@ -27,4 +27,10 @@ public class MainController {
 		mv.setViewName("main/protomain");
 		return mv;
 	}
+	
+	
+	@GetMapping(value="/search")
+	public String search() {
+	    return "/main/search";
+	}
 }
