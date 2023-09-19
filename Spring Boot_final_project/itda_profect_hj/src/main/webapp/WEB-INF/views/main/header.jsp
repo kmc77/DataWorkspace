@@ -61,7 +61,7 @@
 				<!-- 헤더의 로그인 버튼 -->
 				<button type="button" class="login_btn" data-toggle="modal"
 					data-target="#myModal"
-					style="color: #FBD1A7; background: rgb(1, 39, 60); border: none;">로그인</button>
+					style="color: #FBD1A7; background: rgb(1, 39, 60); border: none; ">로그인</button>
 
 
 				<!-- Modal -->
@@ -72,11 +72,9 @@
 					<div class="modal fade" id="myModal">
 						<div class="modal-dialog">
 							<div class="modal-content">
-								<div class="modal-header"
-									style="text-align: center; border: none;">
 									<div class="modal-content">
 									<!-- 병합 -->
-										<div class="modal-header">
+										<div class="modal-header2">
 											<h2>로그인</h2>
 										</div>
 										<article class="modal_article login p_lr_space pb24">
@@ -93,8 +91,8 @@
 												<input type="hidden" name="back_url_auth" value="">
 												<input type="hidden" name="used_login_btn" value="Y">
 
-												<div class="input_block">
-													<div class="input_form">
+												<div class="input_block2">
+													<div class="input_form2">
 														<input title="이메일" type="text" name="uid" value=""
 															placeholder="이메일"><i aria-hidden="true"
 															class="zmdi zmdi-check"></i>
@@ -195,15 +193,18 @@
 													IMWEB_SESSIONSTORAGE
 															.clear('PROD_QNA_.*');
 												}
+												
 											</script>
+											
 										</article>
 										<!-- 병합-end -->
 									</div>
+									
 
-								</div>
 								<!-- modal-content end -->
 							</div>
 							<!-- modal-dialog end -->
+						</div>
 						</div>
 						<!-- Modal end -->
 						<input type="hidden" name="${_csrf.parameterName}"

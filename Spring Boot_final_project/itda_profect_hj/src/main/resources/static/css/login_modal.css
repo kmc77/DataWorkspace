@@ -1,77 +1,51 @@
 @charset "EUC-KR";
-/* First block */
-.modal_site_modal_menu #s201911263f098fb026b11.side_basic main .inside,
-.menu_type_modal #s201911263f098fb026b11.side_basic main .inside {
-  max-width: 520px !important;
+
+.modal-header2 h2 {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	margin: 20px;
 }
 
-.doz_sys .modal_site_modal_menu .modal-header,
-.menu_type_modal .doz_modal_header {
-  border-width: 0 0 1px 0 !important;
-  border-style: solid !important;
+input, optgroup, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	box-shadow: none;
+	padding: 12px 16px;
+	width: 100%;
 }
 
-.menu_type_modal #s201911263f098fb026b11,
-.menu_type_modal .doz_modal_header {
-  background: #your-background-color !important;
-  color: #your-text-color !important;
+article.modal_article {
+	color: #212121;
+	height: 100%;
+	padding: 32px 24px 24px;
+	border-radius: 4px;
+	z-index: 2500;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
-.menu_type_modal .doz_modal_header .bt.bt-flat.bt-default {
-  color: #your-text-color !important;
-}
 
-#s201911263f098fb026b11 .left-menu ul li.on a,
-.doz_sys #s201911263f098fb026b11 .paging_type_count .owl-dots .owl-dot span:before,
-.menu_type_modal #s201911263f098fb026b11,
-#s201911263f098fb026b11 .list_review_inner .comment.tools.text-gray-bright {
-  color: #your-text-color !important;
-}
 
-/* Second block */
-.modal_site_modal_menu #s20191120d7fc7c3bb6d90.side_basic main.inside,
-.menu_type_modal #s20191120d7fc7c3bb6d90.side_basic main.inside {
-  max-width: 550px !important;
-}
+/* 
+	세로형 로그인 모달
+	
+	.modal-content {
+	position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
 
-.doz_sys.modal_site_modal_menu.modal-header,
-.menu_type_moda.doze_moda_headerl {
-    border-width: 0 0 1px 0 !important;
-    border-style: solid !important;
 }
-
-# s. menu _type_ modal. s. doze_ modal-header{
-background: #your-background-color !important;
-color: #your-text-color !important;
-}
-
-.doze_moadalheaderbt.btflat btdefault{
-color: #your-text-color !important;
-}
-
-# s leftmenuul liona,. dozesys.s pagingtypecount.owl-dots.owl-dot span:before,. menutypemodal s.listreviewinner.comment.tools.textgraybright{
-color: #your-text-color !important;
-}
-
-/* Third block */
-.modal_site_modamenu# s2o191o30690876bb60193 sidebasicmain.inside,.menutypemodal.#so191o30690876bb60193 sidebasicmain.inside{
-maxwidth: 550px !important;
-}
-
-.doza sys modal _site modal menu modamheader,.menutype.modalmheader.l{
-  border-width: 0 0 1px 0 !important;
-  border-style: solid !important;
-}
-
-.menutype.modalmheader,# so191o30690876bb60193{
-  background: #your-background-color !important;
-  color: #your-text-color !important;
-}
-
-.menutype.modalmheader.bt btflat btdefault {
-  color: #your-text-color !important;
-}
-
-# so19lo3o69o876bbb6193.leftmenuul liona,. dozesys.so19lo3o69ob87bbb6193.pagingtypecount.owl dots.owl dot span before, menutype moda so19lo3 o69ob87bbb6193,#so19lo30bo87bbb6193.listreviewinner.comment.tools.textgraybright{ 
-  color: #your-text-color !important;
-}
+ */
