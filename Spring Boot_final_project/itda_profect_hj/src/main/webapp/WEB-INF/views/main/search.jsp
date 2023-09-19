@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!doctype html>
-<html lang="ko" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36">
-<head>
+<html lang="ko" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"><head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="description" content="네이버 프리미엄 콘텐츠의 채널 및 콘텐츠 검색 결과를 확인할 수 있습니다.">
 	<meta property="og:title" content="채널 및 콘텐츠 검색 : 네이버 프리미엄 콘텐츠">
@@ -16,17 +15,17 @@
 	<meta name="twitter:description" content="네이버 프리미엄 콘텐츠의 채널 및 콘텐츠 검색 결과를 확인할 수 있습니다.">
 	<title>채널 및 콘텐츠 검색 : 네이버 프리미엄 콘텐츠</title>
 		<link rel="stylesheet" href="https://static-nnews.pstatic.net/css/min/20230914a/premium_service.css">
-	<link rel="shortcut icon" type="image/x-icon" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/favicon_M.ico" />
-	<link rel="apple-touch-icon-precomposed" size="72x72" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png" />
-	<link rel="apple-touch-icon-precomposed" size="96x96" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png" />
-	<link rel="apple-touch-icon-precomposed" size="144x144" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png" />
-	<link rel="apple-touch-icon-precomposed" size="192x192" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/favicon_M.ico">
+	<link rel="apple-touch-icon-precomposed" size="72x72" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png">
+	<link rel="apple-touch-icon-precomposed" size="96x96" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png">
+	<link rel="apple-touch-icon-precomposed" size="144x144" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png">
+	<link rel="apple-touch-icon-precomposed" size="192x192" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png">
 	<base target="_parent">
-	<script>
+	<script async="" src="https://ntm.pstatic.net/ex/nlog.js"></script><script async="" src="https://ntm.pstatic.net/scripts/ntm_774a0c8e7c40.js"></script><script>
 		var g_ssc = nsc = "Mpremiumcontents.all";
 		var g_default_area = "art";
 
-		var svr = "one-service-premium-r-20230914-230914-164253-6d7db59565-rnxm5";
+		var svr = "one-service-premium-r-20230914-230914-164253-6d7db59565-l82xv";
 		var nelo = {
 			sampleNumber : 100,
 			maxCount : 100,
@@ -56,9 +55,21 @@
 		_paq.push(["setSiteId", "1"]);
 
 		var isPremiumReferer = false;
+		isPremiumReferer = true;
 	</script>
 	<script src="https://static-nnews.pstatic.net/js/min/20230914a/premium_common.min.js"></script>
-</head>
+<style>.osSwitch{position:relative;display:inline-block;width:34px;height:15.3px}.osSwitch input{opacity:0;width:0;height:0}.osSlider{position:absolute;top:0;left:0;right:0;bottom:0;border-radius:34px;background-color:#93a0b5;transition:0.4s}.osSlider:before{position:absolute;content:'';height:13px;width:13px;left:2px;bottom:1px;border-radius:50%;background-color:white;transition:0.4s}input:checked+.sliderGreen{background-color:#04d289}input:checked+.sliderRed{background-color:#ff3b30}input:not(:checked)+.defaultGreen{background-color:#04d289}input:checked+.osSlider:before{transform:translateX(17px)}
+</style><style>
+    @font-face {
+      font-family: 'SegoeUI_online_security'; 
+      src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/segoe-ui.woff);
+    }
+
+    @font-face {
+      font-family: 'SegoeUI_bold_online_security'; 
+      src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/segoe-ui-bold.woff);
+    }
+</style></head>
 <body class="">
 <div class="u_skip"><a href="#ct">본문 바로가기</a></div>
 <div id="_CONTENT_INDICATOR_WRAP" style="display:none;">
@@ -67,7 +78,7 @@
 </div>
 <hr>
 <script>
-	var svt = "20230918180157.036";
+	var svt = "20230919175006.941";
 	var timestamp = svt.substr(0, 8);
 	var isLogin = false;
 
@@ -104,7 +115,9 @@
 		<div class="psp_recent _SEARCH_HISTORY_AREA">
 			<strong class="psp_recent_title">최근 검색어</strong>
 			<div class="psp_recent_list_area">
-				<div id="_SEARCH_HISTORY_LIST_WRAP" data-nclk-prefix="pch_search"></div>
+				<div id="_SEARCH_HISTORY_LIST_WRAP" data-nclk-prefix="pch_search">
+				<div class="psp_recent_text">검색어 저장 기능이 꺼져 있습니다.</div>
+				</div>
 				<script type="x-tmpl-mustache" class="_SEARCH_HISTORY_LIST">
 				{{#autoSave}}
 				{{#hasKeywords}}
@@ -128,9 +141,9 @@
 			</div>
 			<div class="psp_recent_option">
 				<div class="psp_recent_option_button_wrap">
-					<button type="button" class="psp_recent_option_button _CLEAR_SEARCH_HISTORY_BTN" data-clk="pch_search.historyclear">전체 삭제</button>
-					<button type="button" class="psp_recent_option_button _AUTO_SAVE_BUTTON" data-enable="false" data-clk="pch_search.historyoff">자동저장 끄기</button>
-					<button type="button" style="display: none;" class="psp_recent_option_button _AUTO_SAVE_BUTTON" data-enable="true" data-clk="pch_search.historyon">자동저장 켜기</button>
+					<button type="button" class="psp_recent_option_button _CLEAR_SEARCH_HISTORY_BTN" data-clk="pch_search.historyclear" style="display: none;">전체 삭제</button>
+					<button type="button" class="psp_recent_option_button _AUTO_SAVE_BUTTON" data-enable="false" data-clk="pch_search.historyoff" style="display: none;">자동저장 끄기</button>
+					<button type="button" style="" class="psp_recent_option_button _AUTO_SAVE_BUTTON" data-enable="true" data-clk="pch_search.historyon">자동저장 켜기</button>
 				</div>
 				<div class="psp_recent_option_close_wrap">
 					<button type="button" class="psp_recent_option_button _CLOSE_SEARCH_HISTORY_BTN" data-clk="pch_search.historyclose">닫기</button>
@@ -142,19 +155,19 @@
 				<h2 class="pk_h">인기검색어</h2>
 				<ul class="pk_list">
 					<li class="pk_item">
-						<a href="/ch/search?searchQuery&#x3D;%EB%B6%80%EB%8F%99%EC%82%B0" class="pk_link" data-clk="pch_search.hot">부동산</a>
+						<a href="/ch/search?searchQuery=%EC%9E%90%EC%9C%A8%EC%A3%BC%ED%96%89" class="pk_link" data-clk="pch_search.hot">1</a>
 					</li>
 					<li class="pk_item">
-						<a href="/ch/search?searchQuery&#x3D;%EC%9E%90%EC%9C%A8%EC%A3%BC%ED%96%89" class="pk_link" data-clk="pch_search.hot">자율주행</a>
+						<a href="/ch/search?searchQuery=%EC%88%98%ED%95%99" class="pk_link" data-clk="pch_search.hot">2</a>
 					</li>
 					<li class="pk_item">
-						<a href="/ch/search?searchQuery&#x3D;%EB%B0%98%EB%8F%84%EC%B2%B4" class="pk_link" data-clk="pch_search.hot">반도체</a>
+						<a href="/ch/search?searchQuery=%ED%8C%A1%ED%81%B4%EB%9E%98%EC%8A%A4" class="pk_link" data-clk="pch_search.hot">3</a>
 					</li>
 					<li class="pk_item">
-						<a href="/ch/search?searchQuery&#x3D;%ED%8C%A1%ED%81%B4%EB%9E%98%EC%8A%A4" class="pk_link" data-clk="pch_search.hot">팡클래스</a>
+						<a href="/ch/search?searchQuery=%EC%98%81%EC%96%B4" class="pk_link" data-clk="pch_search.hot">4</a>
 					</li>
 					<li class="pk_item">
-						<a href="/ch/search?searchQuery&#x3D;%EB%B0%94%EC%9D%B4%EC%98%A4" class="pk_link" data-clk="pch_search.hot">바이오</a>
+						<a href="/ch/search?searchQuery=%EC%B2%AD%EC%86%A1%EC%B4%8C%EB%86%88" class="pk_link" data-clk="pch_search.hot">5</a>
 					</li>
 				</ul>
 			</div>
@@ -317,7 +330,7 @@ $(window).on("load", function() {
 });
 </script>
 
-</body>
+
 <script>
 var eventType = "onpageshow" in window ? "pageshow" : "load";
 $(window).on(eventType, function() {
@@ -338,4 +351,5 @@ $(window).on(eventType, function() {
 	}
 });
 </script>
-</html>
+
+</body></html>

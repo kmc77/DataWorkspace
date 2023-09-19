@@ -1,0 +1,77 @@
+@charset "EUC-KR";
+/* First block */
+.modal_site_modal_menu #s201911263f098fb026b11.side_basic main .inside,
+.menu_type_modal #s201911263f098fb026b11.side_basic main .inside {
+  max-width: 520px !important;
+}
+
+.doz_sys .modal_site_modal_menu .modal-header,
+.menu_type_modal .doz_modal_header {
+  border-width: 0 0 1px 0 !important;
+  border-style: solid !important;
+}
+
+.menu_type_modal #s201911263f098fb026b11,
+.menu_type_modal .doz_modal_header {
+  background: #your-background-color !important;
+  color: #your-text-color !important;
+}
+
+.menu_type_modal .doz_modal_header .bt.bt-flat.bt-default {
+  color: #your-text-color !important;
+}
+
+#s201911263f098fb026b11 .left-menu ul li.on a,
+.doz_sys #s201911263f098fb026b11 .paging_type_count .owl-dots .owl-dot span:before,
+.menu_type_modal #s201911263f098fb026b11,
+#s201911263f098fb026b11 .list_review_inner .comment.tools.text-gray-bright {
+  color: #your-text-color !important;
+}
+
+/* Second block */
+.modal_site_modal_menu #s20191120d7fc7c3bb6d90.side_basic main.inside,
+.menu_type_modal #s20191120d7fc7c3bb6d90.side_basic main.inside {
+  max-width: 550px !important;
+}
+
+.doz_sys.modal_site_modal_menu.modal-header,
+.menu_type_moda.doze_moda_headerl {
+    border-width: 0 0 1px 0 !important;
+    border-style: solid !important;
+}
+
+# s. menu _type_ modal. s. doze_ modal-header{
+background: #your-background-color !important;
+color: #your-text-color !important;
+}
+
+.doze_moadalheaderbt.btflat btdefault{
+color: #your-text-color !important;
+}
+
+# s leftmenuul liona,. dozesys.s pagingtypecount.owl-dots.owl-dot span:before,. menutypemodal s.listreviewinner.comment.tools.textgraybright{
+color: #your-text-color !important;
+}
+
+/* Third block */
+.modal_site_modamenu# s2o191o30690876bb60193 sidebasicmain.inside,.menutypemodal.#so191o30690876bb60193 sidebasicmain.inside{
+maxwidth: 550px !important;
+}
+
+.doza sys modal _site modal menu modamheader,.menutype.modalmheader.l{
+  border-width: 0 0 1px 0 !important;
+  border-style: solid !important;
+}
+
+.menutype.modalmheader,# so191o30690876bb60193{
+  background: #your-background-color !important;
+  color: #your-text-color !important;
+}
+
+.menutype.modalmheader.bt btflat btdefault {
+  color: #your-text-color !important;
+}
+
+# so19lo3o69o876bbb6193.leftmenuul liona,. dozesys.so19lo3o69ob87bbb6193.pagingtypecount.owl dots.owl dot span before, menutype moda so19lo3 o69ob87bbb6193,#so19lo30bo87bbb6193.listreviewinner.comment.tools.textgraybright{ 
+  color: #your-text-color !important;
+}
