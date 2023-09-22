@@ -2,8 +2,9 @@
 
   <footer class="footer">
       <div class="footer-container footer-color">
-        <p style="font-weight: bold; font-size: 15px;">잇:다(주) 사업자 정보</p><a class="footer-btn" href="${pageContext.request.contextPath}/main/customerService">공지사항</a>
-        
+        <p style="font-weight: bold; font-size: 15px;">잇:다(주) 사업자 정보</p>
+
+        <a class="footer-btn" href="${pageContext.request.contextPath}/main/customerService">공지사항</a>																	
         <table class="footer-table footer-color">
           <tr class="footer-row">
             <td>사업자 등록번호</td>
@@ -24,6 +25,7 @@
           <tr class="footer-row">
             <td>호스팅 서비스 제공</td>
             <td>NAVER Cloud</td>
+            
           </tr>
         </table><br>
         <span class="footer-span footer-color">네이버(주)는 통신판매중개시스템의 제공자로서 통신판매의 당사자가 아닙니다. 콘텐츠 판매, 환불 등과 관련한 의무와 책임은 판매자에게 있습니다.</span>

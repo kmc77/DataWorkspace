@@ -14,7 +14,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/mainpage.js"></script>
 </head>
 <body>
-<jsp:include page="${pageContext.request.contextPath}/include/header.jsp"/>
+<jsp:include page="../include/header.jsp"/>
 <jsp:include page="top.jsp"/>
 <div class="main_container">
     <div class="recommend_area">
@@ -69,6 +69,6 @@
     <jsp:include page="TodayChannel.jsp"/>
     <jsp:include page="TodayContent.jsp"/>
 </div>
-<jsp:include page="${pageContext.request.contextPath}/include/footer.jsp"/>
+<jsp:include page="../include/footer.jsp"/>
 </body>
 </html>

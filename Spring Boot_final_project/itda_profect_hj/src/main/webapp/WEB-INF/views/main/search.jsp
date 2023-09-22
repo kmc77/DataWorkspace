@@ -21,7 +21,8 @@
 	<link rel="apple-touch-icon-precomposed" size="144x144" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png">
 	<link rel="apple-touch-icon-precomposed" size="192x192" href="https://ssl.pstatic.net/static.news/image/news/premium/studio/meta/2021/04/22/og.png">
 	<base target="_parent">
-	<script async="" src="https://ntm.pstatic.net/ex/nlog.js"></script><script async="" src="https://ntm.pstatic.net/scripts/ntm_774a0c8e7c40.js"></script><script>
+	<script async="" src="https://ntm.pstatic.net/ex/nlog.js"></script><script async="" src="https://ntm.pstatic.net/scripts/ntm_774a0c8e7c40.js"></script>
+	<script>
 		var g_ssc = nsc = "Mpremiumcontents.all";
 		var g_default_area = "art";
 

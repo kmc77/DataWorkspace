@@ -11,26 +11,31 @@ import org.springframework.web.servlet.ModelAndView;
 import com.itda.ITDA.service.MainService;
 
 @Controller
-@RequestMapping(value="/main")
+@RequestMapping(value = "/main")
 public class MainController {
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
-	
+
 	private MainService mainService;
-	
+
 	@Autowired
 	public MainController(MainService mainService) {
 		this.mainService = mainService;
 	}
-	
-	@GetMapping(value="/protomain")
+
+	@GetMapping(value = "/protomain")
 	public ModelAndView SetMain(ModelAndView mv) {
 		mv.setViewName("main/protomain");
 		return mv;
 	}
-	
-	
-	@GetMapping(value="/search")
+
+	@GetMapping(value = "/search")
 	public String search() {
-	    return "/main/search";
+		return "/main/search";
+	}
+
+	@GetMapping(value = "/customerService")
+	public ModelAndView customerService(ModelAndView mv) {
+		mv.setViewName("/main/customerService");
+		return mv;
 	}
 }
