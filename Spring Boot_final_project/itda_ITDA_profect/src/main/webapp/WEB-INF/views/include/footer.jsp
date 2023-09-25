@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
   <footer class="footer">
-      <div class="footer-container footer-color">
+      <div class="footer-container footer-color" >
         <p style="font-weight: bold; font-size: 15px;">잇:다(주) 사업자 정보</p>
 
-        <a class="footer-btn" href="${pageContext.request.contextPath}/main/customerService">공지사항</a>																	
+        <a href="${pageContext.request.contextPath}/info/customerService" style="color:white !important">공지사항</a>																	
         <table class="footer-table footer-color">
           <tr class="footer-row">
             <td>사업자 등록번호</td>

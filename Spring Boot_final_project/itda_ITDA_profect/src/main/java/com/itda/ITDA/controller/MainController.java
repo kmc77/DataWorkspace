@@ -33,9 +33,4 @@ public class MainController {
 		return "/main/search";
 	}
 
-	@GetMapping(value = "/customerService")
-	public ModelAndView customerService(ModelAndView mv) {
-		mv.setViewName("/main/customerService");
-		return mv;
-	}
 }
