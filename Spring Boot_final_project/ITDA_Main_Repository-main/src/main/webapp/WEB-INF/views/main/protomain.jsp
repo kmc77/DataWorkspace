@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
-    <link rel="stylesheet" href="resources/css/bootstrap.css">
+   <!--  <link rel="stylesheet" href="resources/css/bootstrap.css"> -->
     <link rel="stylesheet" href="resources/css/common.css">
     <link rel="stylesheet" href="resources/css/mainpage.css">
+<jsp:include page="../include/header.jsp"/>
     <script>
         var contextPath = '<%= request.getContextPath() %>';
     </script>
-    <script src="${pageContext.request.contextPath}/resources/js/mainpage.js"></script>
+    <script src="resources/js/mainpage.js"></script>
 </head>
 <body>
-<jsp:include page="../include/header.jsp"/>
 <jsp:include page="top.jsp"/>
 <div class="main_container">
     <div class="recommend_area">

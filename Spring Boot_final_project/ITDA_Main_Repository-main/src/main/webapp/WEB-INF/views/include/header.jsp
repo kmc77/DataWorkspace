@@ -1,35 +1,118 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="resources/css/login_modal.css">
 <link rel="stylesheet" href="resources/css/premium_service2.css">
-<meta charset="UTF-8">
-<link rel="shortcut icon" type="image" href="resources/image/main/tv_icon.ico" />
-<title>잇:다</title>
-</head>
-<body>
+
+<script> var contextPath = "<%=request.getContextPath()%>
+	";
+</script>
+<script>
+	const result = "${result}";
+
+	if (result == "joinSuccess") {
+		alert("회원가입을 축하합니다");
+	} else if ("${loginfail}" == "loginFailMsg") {
+		alert("아이디나 비밀번호가 일치하지 않습니다");
+	}
+
+	$(function() {
+		$("#joinForm").click(function() {
+			location.href = "${pageContext.request.contextPath}/member/join";
+		})
+	})
+	
+var _jn='';
+var _jid='';
+var m_jn='';
+var m_jid='';
+var m_id='';
+var _id='';
+var SITE_MEMBER = function(){
+	var member_profile_id = 'member_profile';
+	var $member_profile, $join_form;
+	var address_format;
+
+	var terms_agree = false;
+	var _third_party, _marketing_sms_agree, _marketing_email_agree;
+
+	var policyConfirm = function(){
+	};
+
+	var openFindPassword = function(){
+		$.cocoaDialog.close();
+		$.ajax({
+			type: 'POST',
+			data: {d: 'd'},
+			url: ('/dialog/find_password.cm'),
+			dataType: 'html',
+			async: true,
+			cache: false,
+			success: function(html){
+				var $html = $(html);
+				$.cocoaDialog.open({type: 'site_find_password', custom_popup: $html, hide_event:function(){
+						$(window).unbind('keydown');
+					}});
+			}
+		});
+	};
+
+	
+	
+</script>
 <header class="header_wrap as_home">
 	<div class="header">
 		<div class="header_inner">
 			<div class="header_content">
 				<div class="header_service">
+		<!-- 왼쪽 상단 로고 링크 -->
 					<h1 class="header_logo">
-						<a href="/" class="header_logo" ><img class="header_logo_img" alt="" src="resources/image/common/itda_logo3.png" ><span class="blind">잇:다</span></a>
+						<a href="${pageContext.request.contextPath}/main" class="header_logo" ><img class="header_logo_img" alt="" src="resources/image/common/itda_logo3.png" ><span class="blind">잇:다</span></a>
 					</h1>
 				</div>
-				<div class="header_menu">
-					<a class="header_search" onclick="location.href='${pageContext.request.contextPath}/main/search'"></a>
-					
-					
-					<div class="header_user">
-						<button type="button" class="user_link" data-toggle="modal" data-target="#myModal">
-							<div class="user_sign_in">로그인</div>
-						</button>
-					</div>
-					
-						<!-- Modal -->
+			<div class="header_menu">
+				<a href="${pageContext.request.contextPath}/main/search" class="header_search"><span class="blind">검색</span></a>
+			
+				
+		<ul id="right_btns">
+	<%-- 		<li id="search" style="margin-bottom: 24px;"><a id="search_btn"
+				onclick="location.href='${pageContext.request.contextPath}/main/search'">
+					<img
+					src="${pageContext.request.contextPath}/resources/image/common/search.png"
+					style="width: 30px; height: auto;">
+			</a></li>
+	 --%>		<%
+			String userId = (String) session.getAttribute("userId");
+			String userProfilePath = (String) session.getAttribute("userProfilePath"); // 프로필 사진 경로 가져오기
+
+			if (userId != null && !userId.equals("")) {
+			%>
+
+			<!-- 로그인한 경우 프로필 사진을 표시합니다. -->
+			<div class="dropdown">
+				<button class="dropbtn">
+					<img id="profile_img" src="${userProfilePath}"
+						style="width: 30px; height: auto;" />
+				</button>
+				<div class="dropdown-content">
+					<a href="${pageContext.request.contextPath}/myPage">마이 페이지</a> <a
+						href="#" id="logoutLink">로그아웃</a>
+				</div>
+			</div>
+
+			<%
+			} else {
+			%>
+			
+			<div class="header_user">
+				<div class="user_sign_in">
+				<button type="button" class="user_sign_in" data-toggle="modal"
+					data-target="#myModal">로그인</button>
+				</div>
+
+				<!-- 헤더의 로그인 버튼 -->
+
+
+				<!-- Modal -->
 				<form id="modalForm"
 					action="${pageContext.request.contextPath}/member/loginProcess"
 					method="post">
@@ -42,12 +125,13 @@
 										<div class="modal-header2">
 											<h2>로그인</h2>
 										</div>
-										<article class="modal_article login p_lr_space pb24">
+										<article class="modal_article2 login p_lr_space pb24">
 											<button class="close" data-dismiss="modal" aria-label="Close"
 												data-toggle="tooltip" data-placement="bottom"
 												data-original-title="닫기">
 												<i class="btl bt-times"></i>
 											</button>
+
 
 
 											<form action="/backpg/login.cm" method="post"
@@ -56,19 +140,23 @@
 												<input type="hidden" name="back_url_auth" value="">
 												<input type="hidden" name="used_login_btn" value="Y">
 
-												<div class="input_block">
-													<div class="input_form">
-														<input title="이메일" type="text" name="uid" value=""
-															placeholder="이메일"><i aria-hidden="true"
-															class="zmdi zmdi-check"></i>
-													</div>
-													<div class="input_form brt">
-														<input title="비밀번호" name="passwd" type="password" value=""
-															placeholder="비밀번호" autocomplete="off"><i
-															aria-hidden="true" class="zmdi zmdi-check"></i>
-													</div>
-												</div>
-												<!--input_form에 active클래스명이 붙으면 (인풋에 글자가 입력된 상태) 체크표시 활성화 -->
+														<div class="input_block">
+															<div class="input_form">
+																<input class="input_form2"
+																	title="아이디" type="text" name="uid" value=""
+																	placeholder="아이디"> <i aria-hidden="true"
+																	class="zmdi zmdi-check"></i>
+
+															</div>
+															<div class="input_form brt">
+																<input class="input_form2" 
+																title="비밀번호" name="passwd" type="password"
+																	value="" placeholder="비밀번호" autocomplete="off"
+																><i aria-hidden="true"
+																	class="zmdi zmdi-check"></i>
+															</div>
+														</div>
+														<!--input_form에 active클래스명이 붙으면 (인풋에 글자가 입력된 상태) 체크표시 활성화 -->
 
 												<div class="cheak_article">
 													<div class="checkbox checkbox-styled">
@@ -177,11 +265,13 @@
 						<input type="hidden" name="${_csrf.parameterName}"
 							value="${_csrf.token}">
 				</form>
-					
+			<!-- login_modal end -->
+			<%
+			}
+			%>
+			</div>
+		</ul>
+							</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</header>
-</body>
-</html>

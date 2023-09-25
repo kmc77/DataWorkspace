@@ -131,8 +131,8 @@ var SITE_MEMBER = function(){
 
 												<div class="input_block">
 													<div class="input_form">
-														<input title="이메일" type="text" name="uid" value=""
-															placeholder="이메일"><i aria-hidden="true"
+														<input title="아이디" type="text" name="uid" value=""
+															placeholder="아이디"><i aria-hidden="true"
 															class="zmdi zmdi-check"></i>
 													</div>
 													<div class="input_form brt">
